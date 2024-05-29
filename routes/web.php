@@ -8,6 +8,10 @@ Route::get('/', function () {
     return view('landingPage');
 });
 
+Route::get('/product', function () {
+    return view('productPage');
+});
+
 Route::get('/laravel', function () {
     return view('welcome');
 });
