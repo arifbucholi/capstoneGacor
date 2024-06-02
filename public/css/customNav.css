@@ -1,0 +1,106 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: white;
+    z-index: 10;
+    padding: 20px 80px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#navbar .nav-links a {
+    color: #985A33;
+}
+
+#navbar .nav-links a:hover {
+    color: #985A33;
+}
+
+#navbar.scrolled .nav-links a {
+    color: #fff;
+}
+
+#navbar.scrolled .nav-links a:hover {
+    color: #fff;
+}
+
+.search-form input[type="text"]:focus {
+    width: 220px;
+    outline: none;
+    color: #985A33;
+    background: white;
+}
+
+.search-form input[type="text"]::placeholder {
+    color: #985A33; /* Warna teks placeholder */
+}
+
+.search-form.scrolled input[type="text"]:focus {
+    width: 220px;
+    outline: none;
+    color: #985A33;
+    background: white;
+}
+
+.search-form.scrolled input[type="text"]::placeholder {
+    color: #fff; /* Warna teks placeholder */
+}
+
+.navbar.scrolled .search-form input::placeholder {
+    color: white; /* Ubah warna placeholder menjadi putih saat navbar di-scroll */
+}
+
+
+.navbar img {
+    max-width: 100px;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-left,
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-left .logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.navbar-left .nav-links,
+.navbar-right .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-left .nav-links li,
+.navbar-right .nav-links li {
+    display: inline;
+}
+
+.navbar-left .nav-links a,
+.navbar-right .nav-links a {
+    color: #985A33;
+    text-decoration: none;
+}
+
+.navbar-left .nav-links a:hover,
+.navbar-right .nav-links a:hover {
+    text-decoration: underline;
+}
+
+.navbar.scrolled {
+    background-color: #985A33;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.navbar.scrolled .logo img {
+    filter: brightness(0) invert(1);
+}

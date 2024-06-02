@@ -8,8 +8,16 @@ Route::get('/', function () {
     return view('landingPage');
 });
 
+Route::get('/profile', function () {
+    return view('profilePage');
+});
+
 Route::get('/product', function () {
     return view('productPage');
+});
+
+Route::get('/cart', function () {
+    return view('cartPage');
 });
 
 Route::get('/laravel', function () {

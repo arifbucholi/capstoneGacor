@@ -1,0 +1,503 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: white;
+    z-index: 10;
+    padding: 20px 80px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#navbar .nav-links a {
+    color: #985A33;
+}
+
+#navbar .nav-links a:hover {
+    color: #985A33;
+}
+
+#navbar.scrolled .nav-links a {
+    color: #fff;
+}
+
+#navbar.scrolled .nav-links a:hover {
+    color: #fff;
+}
+
+.search-form input[type="text"]:focus {
+    width: 220px;
+    outline: none;
+    color: #985A33;
+    background: white;
+}
+
+.search-form input[type="text"]::placeholder {
+    color: #985A33; /* Warna teks placeholder */
+}
+
+.search-form.scrolled input[type="text"]:focus {
+    width: 220px;
+    outline: none;
+    color: #985A33;
+    background: white;
+}
+
+.search-form.scrolled input[type="text"]::placeholder {
+    color: #fff; /* Warna teks placeholder */
+}
+
+.navbar.scrolled .search-form input::placeholder {
+    color: white; /* Ubah warna placeholder menjadi putih saat navbar di-scroll */
+}
+
+
+.navbar img {
+    max-width: 100px;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-left,
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-left .logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.navbar-left .nav-links,
+.navbar-right .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-left .nav-links li,
+.navbar-right .nav-links li {
+    display: inline;
+}
+
+.navbar-left .nav-links a,
+.navbar-right .nav-links a {
+    color: #985A33;
+    text-decoration: none;
+}
+
+.navbar-left .nav-links a:hover,
+.navbar-right .nav-links a:hover {
+    text-decoration: underline;
+}
+
+.navbar.scrolled {
+    background-color: #985A33;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.navbar.scrolled .logo img {
+    filter: brightness(0) invert(1);
+}
+
+
+
+.cart-container {
+    width: 80%;
+    margin: 100px auto 40px;
+    background-color: #fff;
+    padding: 50px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.cart-header, .cart-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.cart-footer {
+    border-top: 1px solid #ddd;
+    border-bottom: none;
+}
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+.cart-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+
+
+
+.cart-item-info {
+    flex: 1;
+    margin-left: 10px;
+}
+.cart-item-info p {
+    margin: 5px 0;
+}
+.cart-item-price, .cart-item-controls {
+    display: flex;
+    align-items: center;
+}
+.cart-item-price {
+    padding: 12px ;
+    flex: 1.5;
+    justify-content: space-between;
+}
+
+.cart-item-controls {
+    flex: 0.4;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.cart-item-controls .quantity-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 3px; /* Mengurangi sudut border-radius */
+    overflow: hidden;
+}
+
+.cart-item-controls button {
+    padding: 10px 14px;
+    background-color: transparent;
+    border: 0;
+    color: #985A33;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.cart-item-controls button.plus {
+    background-color: #985A33; /* Warna tombol "+" */
+}
+
+.cart-item-controls button.minus {
+    background-color: #985A33; /* Warna tombol "-" */
+}
+
+/*
+.cart-item-controls button:hover {
+    background-color: #713d25;
+} */
+
+.cart-item-controls button.delete-button {
+    font-size: 16px; /* Menambahkan ukuran font */
+    padding: 3px; /* Mengurangi padding tombol */
+    line-height: 1; /* Mengatur tinggi baris agar sesuai */
+}
+
+.cart-item-controls input {
+    width: 30px; /* Lebar input diperkecil */
+    text-align: center;
+    border: none;
+    font-size: 12px; /* Mengurangi font-size input */
+    padding: 4px 0; /* Mengurangi padding input */
+}
+
+.cart-footer button {
+    padding: 10px 20px;
+    background-color: #a0522d;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.delete-all {
+    color: red;
+    cursor: pointer;
+    text-decoration: none;
+}
+.delete-all:hover {
+    text-decoration: underline;
+}
+
+/* Checkbox custom style */
+.cart-item-checkbox {
+    flex: 0.2;
+    margin-left: 10px;
+}
+
+.checkbox-custom {
+    /* Hide the default checkbox */
+    display: none;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: white;
+    z-index: 10;
+    padding: 20px 80px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#navbar .nav-links a {
+    color: #985A33;
+}
+
+#navbar .nav-links a:hover {
+    color: #985A33;
+}
+
+#navbar.scrolled .nav-links a {
+    color: #fff;
+}
+
+#navbar.scrolled .nav-links a:hover {
+    color: #fff;
+}
+
+.search-form input[type="text"]:focus {
+    width: 220px;
+    outline: none;
+    color: #985A33;
+    background: white;
+}
+
+.search-form input[type="text"]::placeholder {
+    color: #985A33; /* Warna teks placeholder */
+}
+
+.search-form.scrolled input[type="text"]:focus {
+    width: 220px;
+    outline: none;
+    color: #985A33;
+    background: white;
+}
+
+.search-form.scrolled input[type="text"]::placeholder {
+    color: #fff; /* Warna teks placeholder */
+}
+
+.navbar.scrolled .search-form input::placeholder {
+    color: white; /* Ubah warna placeholder menjadi putih saat navbar di-scroll */
+}
+
+
+.navbar img {
+    max-width: 100px;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-left,
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-left .logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.navbar-left .nav-links,
+.navbar-right .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-left .nav-links li,
+.navbar-right .nav-links li {
+    display: inline;
+}
+
+.navbar-left .nav-links a,
+.navbar-right .nav-links a {
+    color: #985A33;
+    text-decoration: none;
+}
+
+.navbar-left .nav-links a:hover,
+.navbar-right .nav-links a:hover {
+    text-decoration: underline;
+}
+
+.navbar.scrolled {
+    background-color: #985A33;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.navbar.scrolled .logo img {
+    filter: brightness(0) invert(1);
+}
+
+
+
+.cart-container {
+    width: 80%;
+    margin: 100px auto 40px;
+    background-color: #fff;
+    padding: 50px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.cart-header, .cart-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.cart-footer {
+    border-top: 1px solid #ddd;
+    border-bottom: none;
+}
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+.cart-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+
+
+
+.cart-item-info {
+    flex: 1;
+    margin-left: 10px;
+}
+.cart-item-info p {
+    margin: 5px 0;
+}
+.cart-item-price, .cart-item-controls {
+    display: flex;
+    align-items: center;
+}
+.cart-item-price {
+    flex: 1.5;
+    justify-content: space-between;
+}
+
+.cart-item-controls {
+    flex: 0.4;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.cart-item-controls .quantity-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 3px; /* Mengurangi sudut border-radius */
+    overflow: hidden;
+}
+
+.cart-item-controls button {
+    padding: 10px 14px;
+    background-color: transparent;
+    border: 0;
+    color: #985A33;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.cart-item-controls button.plus {
+    background-color: #985A33; /* Warna tombol "+" */
+}
+
+.cart-item-controls button.minus {
+    background-color: #985A33; /* Warna tombol "-" */
+}
+
+/*
+.cart-item-controls button:hover {
+    background-color: #713d25;
+} */
+
+.cart-item-controls button.delete-button {
+    font-size: 16px; /* Menambahkan ukuran font */
+    padding: 3px; /* Mengurangi padding tombol */
+    line-height: 1; /* Mengatur tinggi baris agar sesuai */
+}
+
+.cart-item-controls input {
+    width: 30px; /* Lebar input diperkecil */
+    text-align: center;
+    border: none;
+    font-size: 12px; /* Mengurangi font-size input */
+    padding: 4px 0; /* Mengurangi padding input */
+}
+
+.cart-footer button {
+    padding: 10px 20px;
+    background-color: #a0522d;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.delete-all {
+    color: red;
+    cursor: pointer;
+    text-decoration: none;
+}
+.delete-all:hover {
+    text-decoration: underline;
+}
+
+/* Checkbox custom style */
+.cart-item-checkbox {
+    flex: 0.2;
+    margin-left: 10px;
+}
+
+.checkbox-custom {
+    display: none;
+}
+
+.checkbox-custom + label {
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 3px;
+    border: 1px solid #985A33;
+}
+
+.checkbox-custom:checked + label {
+    background-color: #985A33;
+}
+
+.checkbox-custom:checked + label::after {
+    content: '\2714';
+    font-size: 16px;
+    color: white;
+    display: block;
+    text-align: center;
+}
+
+

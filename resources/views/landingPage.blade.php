@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-<<<<<<< HEAD
-=======
     <link rel="stylesheet" href="{{ asset('css/customLanding.css') }}">
->>>>>>> 830bed059b521a03d935d5412808d477fc417a7a
 </head>
 <body>
     <!-- Navigation -->
@@ -38,7 +35,6 @@
     <section class="hero-section" style="background-image: url('img/hero.jpg');">
         <div class="hero-overlay" style="background: rgba(0, 0, 0, 0.1)">
             <div class="hero-text">
-<<<<<<< HEAD
             </div>
         </div>
     </section>
@@ -50,19 +46,6 @@
             </div>
         </div>
     </section>
-=======
-            </div>
-        </div>
-    </section>
-    <section class="hero-section" style="background-image: url('img/batik.jpg');">
-        <div class="hero-overlay">
-            <div class="hero-text">
-                <h1>"Amba Nitik"</h1>
-                <p>Secara etimologi kata batik berasal dari kata 'amba' yang berarti menulis dan 'nitik' yang berarti titik. Seperti seni lukis, seni batik adalah sebuah proses penambahan warna pada kain dengan cara perintang warna menggunakan bahan lilin yang diproses sedemikian rupa.</p>
-            </div>
-        </div>
-    </section>
->>>>>>> 830bed059b521a03d935d5412808d477fc417a7a
 
     <!-- Product Section -->
     <section class="product-section">
@@ -110,63 +93,6 @@
         </div>
     </section>
 
-<<<<<<< HEAD
-    <!-- Newsletter Section -->
-    <section class="newsletter-section">
-        <div class="container">
-            <h2>Join Our Newsletter</h2>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Enter your email" required>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container clearfix">
-            <div>
-                <img src="img/logo.png" alt="Logo">
-                <p>WhatsApp: +62 859 8989 999</p>
-                <p>Email: hello@batik.com</p>
-                <p>Address: Lorem ipsum street Block B Number 08, Jakarta, Indonesia, 12345</p>
-            </div>
-            <div>
-                <h3>Menu</h3>
-                <ul>
-                    <li><a href="#">Sale</a></li>
-                    <li><a href="#">New Arrivals</a></li>
-                    <li><a href="#">Formal Men</a></li>
-                    <li><a href="#">Formal Women</a></li>
-                    <li><a href="#">Casual Men</a></li>
-                    <li><a href="#">Casual Women</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3>Get Help</h3>
-                <ul>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Customer Service</a></li>
-                    <li><a href="#">Refund and Return</a></li>
-                    <li><a href="#">Terms and Conditions</a></li>
-                    <li><a href="#">Shipping</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3>Account</h3>
-                <ul>
-                    <li><a href="#">My Account</a></li>
-                    <li><a href="#">My Orders</a></li>
-                    <li><a href="#">Vouchers and Discounts</a></li>
-                </ul>
-            </div>
-        </div>
-        <br><br>
-        <div class="copyright">
-            <p>&copy; 2024 Batik Wonderland Laweyan</p>
-        </div>
-    </footer>
-=======
 <!-- Testimonial Section -->
 <section class="testimonial-section">
     <div class="container">
@@ -289,7 +215,6 @@
 </footer>
 
 
->>>>>>> 830bed059b521a03d935d5412808d477fc417a7a
 
     <script src="{{ asset('js/main.js') }}"></script>
 </body>
