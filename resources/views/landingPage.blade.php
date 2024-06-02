@@ -1,433 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>uiCookies:Virb &mdash; Free Bootstrap Theme, Free Responsive Bootstrap Website Template</title>
-    <meta name="description" content="Free Bootstrap Theme by uicookies.com">
-    <meta name="keywords"
-        content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
-
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('assets/css/assetsLanding/cssLanding/styles-merged.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/assetsLanding/cssLanding/style.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/assetsLanding/cssLanding/custom.css') }}">
-
-
-    <!--[if lt IE 9]>
-      <script src="js/vendor/html5shiv.min.js"></script>
-      <script src="js/vendor/respond.min.js"></script>
-    <![endif]-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/customLanding.css') }}">
 </head>
-
 <body>
-
-    <!-- START: header -->
-
-    <div class="probootstrap-loader"></div>
-
-    <header role="banner" class="probootstrap-header">
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
         <div class="container">
-            <a href="index.html" class="probootstrap-logo">Virb</a>
-
-            <a href="#" class="probootstrap-burger-menu visible-xs"><i>Menu</i></a>
-            <div class="mobile-menu-overlay"></div>
-
-            <nav role="navigation" class="probootstrap-nav hidden-xs">
-                <ul class="probootstrap-main-nav">
-                    <li class="active"><a href="index.html">Home</a></li>
-                    <li><a href="projects.html">Portfolio</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+            <div class="navbar-left">
+                <a href="#" class="logo"><img src="img/logo.png" alt="Logo"></a>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="/product">Product</a></li>
+                    <li><a href="#">Article</a></li>
                 </ul>
-                <ul class="probootstrap-right-nav hidden-xs">
-                    <li><a href="#"><i class="icon-twitter"></i></a></li>
-                    <li><a href="#"><i class="icon-facebook2"></i></a></li>
-                    <li><a href="#"><i class="icon-instagram2"></i></a></li>
+            </div>
+            <div class="navbar-right">
+                <form class="search-form">
+                    <input type="text" placeholder="Search">
+                </form>
+                <ul class="nav-links">
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="#">Cart</a></li>
                 </ul>
-                <div class="extra-text visible-xs">
-                    <a href="#" class="probootstrap-burger-menu"><i>Menu</i></a>
-                    <h5>Address</h5>
-                    <p>198 West 21th Street, Suite 721 New York NY 10016</p>
-                    <h5>Connect</h5>
-                    <ul class="social-buttons">
-                        <li><a href="#"><i class="icon-twitter"></i></a></li>
-                        <li><a href="#"><i class="icon-facebook2"></i></a></li>
-                        <li><a href="#"><i class="icon-instagram2"></i></a></li>
-                    </ul>
-                </div>
-            </nav>
+            </div>
         </div>
-    </header>
-    <!-- END: header -->
-    <section class="probootstrap-slider flexslider">
-        <ul class="slides">
-            <li style="background-image: url(public/assets/css/assetsLanding/imgLanding/person_1.jpg);"
-                class="overlay2">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 text-center">
-                            <div class="slides-text probootstrap-animate" data-animate-effect="fadeIn">
-                                <h2>Create beautiful things one at a time</h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </section>
-    <!-- END: slider  -->
+    </nav>
 
-    <section class="probootstrap-section">
-        <div class="container">
-            <div class="row overlap">
-                <div class="col-md-4">
-                    <div class="service left-icon probootstrap-animate">
-
-                        <div class="icon">
-                            <i class="icon-laptop3"></i>
-                        </div>
-                        <div class="text">
-                            <h3 class="heading">Business Strategy</h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts. </p>
-                            <p><a href="single-page.html">Learn more</a></p>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service left-icon probootstrap-animate">
-                        <div class="icon">
-                            <i class="icon-presentation"></i>
-                        </div>
-                        <div class="text">
-                            <h3 class="heading">Business Marketing</h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts. </p>
-                            <p><a href="single-page.html">Learn more</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service left-icon probootstrap-animate">
-                        <div class="icon">
-                            <i class="icon-wallet2"></i>
-                        </div>
-                        <div class="text">
-                            <h3 class="heading">Business Profit</h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts. </p>
-                            <p><a href="single-page.html">Learn more</a></p>
-                        </div>
-                    </div>
-                </div>
+    <!-- Hero Section -->
+    <section class="hero-section" style="background-image: url('img/hero.jpg');">
+        <div class="hero-overlay" style="background: rgba(0, 0, 0, 0.1)">
+            <div class="hero-text">
             </div>
         </div>
     </section>
-    <!-- END section -->
+    <section class="hero-section" style="background-image: url('img/batik.jpg');">
+        <div class="hero-overlay">
+            <div class="hero-text">
+                <h1>"Amba Nitik"</h1>
+                <p>Secara etimologi kata batik berasal dari kata 'amba' yang berarti menulis dan 'nitik' yang berarti titik. Seperti seni lukis, seni batik adalah sebuah proses penambahan warna pada kain dengan cara perintang warna menggunakan bahan lilin yang diproses sedemikian rupa.</p>
+            </div>
+        </div>
+    </section>
 
-    <div class="probootstrap-section">
+    <!-- Product Section -->
+    <section class="product-section">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center section-heading probootstrap-animate">
-                    <h2>Our Services</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 probootstrap-animate" data-animate-effect="fadeInLeft">
-
-                    <div class="panel-group probootstrap-panel" id="accordion" role="tablist"
-                        aria-multiselectable="true">
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingOne">
-                                <h3 class="panel-title">
-                                    <a role="button" data-toggle="collapse" data-parent="#accordion"
-                                        href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-
-                                        Web Design
-                                    </a>
-                                </h3>
-                            </div>
-                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
-                                aria-labelledby="headingOne">
-                                <div class="panel-body">
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and
-                                        Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-                                        right at the coast of the Semantics, a large language ocean.</p>
-
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingTwo">
-                                <h3 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse"
-                                        data-parent="#accordion" href="#collapseTwo" aria-expanded="false"
-                                        aria-controls="collapseTwo">
-                                        WordPress Integration
-                                    </a>
-                                </h3>
-                            </div>
-                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
-                                aria-labelledby="headingTwo">
-                                <div class="panel-body">
-                                    <p>A small river named Duden flows by their place and supplies it with the necessary
-                                        regelialia. It is a paradisematic country, in which roasted parts of sentences
-                                        fly into your mouth.</p>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingThree">
-                                <h3 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse"
-                                        data-parent="#accordion" href="#collapseThree" aria-expanded="false"
-                                        aria-controls="collapseThree">
-                                        SEO &amp; Ranking
-                                    </a>
-                                </h3>
-                            </div>
-                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
-                                aria-labelledby="headingThree">
-                                <div class="panel-body">
-                                    <p>Even the all-powerful Pointing has no control about the blind texts it is an
-                                        almost unorthographic life One day however a small line of blind text by the
-                                        name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-                                </div>
-                            </div>
-                        </div>
+            <h2>Lineup Garment Product</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="{{ asset('img/baju1.jpg') }}" alt="Product 1">
+                    <div class="product-info">
+                        <h3>Batik Batikan</h3>
+                        <p>Rating: ★★★★☆</p>
+                        <p>Terjual: 50</p>
+                        <p>Rp.99.999</p>
                     </div>
-                    <!-- END panel-group -->
                 </div>
-                <div class="col-md-6 probootstrap-animate" data-animate-effect="fadeInRight">
-                    <p><img src="imgLanding/slider_2.jpg" alt="Free HTML Bootstrap Theme by uicookies.com"
-                            class="img-responsive"></p>
+                <div class="product-card">
+                    <img src="{{ asset('img/baju2.jpg') }}" alt="Product 2">
+                    <div class="product-info">
+                        <h3>Batik Asli</h3>
+                        <p>Rating: ★★★☆☆</p>
+                        <p>Terjual: 30</p>
+                        <p>Rp.89.999</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="{{ asset('img/baju3.jpg') }}" alt="Product 3">
+                    <div class="product-info">
+                        <h3>Batik Palsu</h3>
+                        <p>Rating: ★★★★★</p>
+                        <p>Terjual: 70</p>
+                        <p>Rp.109.999</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="{{ asset('img/baju4.jpg') }}" alt="Product 4">
+                    <div class="product-info">
+                        <h3>Batik Abstrak</h3>
+                        <p>Rating: ★★★★☆</p>
+                        <p>Terjual: 45</p>
+                        <p>Rp.95.999</p>
+                    </div>
                 </div>
             </div>
+            <a href="/product" class="btn-more">More</a>
+        </div>
+    </section>
+
+<!-- Testimonial Section -->
+<section class="testimonial-section">
+    <div class="container">
+        <h2>TESTIMONIAL</h2>
+        <h3>Mereka yang telah berkunjung ke Laweyan</h3>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    &#9733;&#9733;&#9733;&#9733;&#9733;
+                </div>
+                <p class="testimonial-quote">"Lorem ipsum dolor sit amet consectetur. diam pellentesque feugiat accumsan lorem mauris. Vestibulum rhoncus"</p>
+                <img src="img/testimonial1.jpg" alt="Intan Kurnia Safitri">
+                <h4>Intan Kurnia Safitri</h4>
+                <p class="testimonial-role">Mahasiswa</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    &#9733;&#9733;&#9733;&#9733;&#9733;
+                </div>
+                <p class="testimonial-quote">"Lorem ipsum dolor sit amet consectetur. diam pellentesque feugiat accumsan lorem mauris. Vestibulum rhoncus"</p>
+                <img src="img/testimonial2.jpg" alt="Roby Syahrul Abdullah">
+                <h4>Roby Syahrul Abdullah</h4>
+                <p class="testimonial-role">Direktur PT. Serba Bisa</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    &#9733;&#9733;&#9733;&#9733;&#9733;
+                </div>
+                <p class="testimonial-quote">"Lorem ipsum dolor sit amet consectetur. diam pellentesque feugiat accumsan lorem mauris. Vestibulum rhoncus"</p>
+                <img src="img/testimonial3.jpg" alt="Ana Siti Permatasari">
+                <h4>Ana Siti Permatasari</h4>
+                <p class="testimonial-role">Pengusaha Ayam</p>
+            </div>
+        </div>
+        <div class="testimonial-pagination">
+            <a href="#">&larr;</a>
+            <span>1/3</span>
+            <a href="#">&rarr;</a>
         </div>
     </div>
-    <!-- END section -->
+</section>
 
-    <section class="probootstrap-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center section-heading probootstrap-animate">
-                    <h2>Watch Video</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 probootstrap-animate" data-animate-effect="fadeIn">
-                    <figure>
-                        <div class="probootstrap-video">
-                            <a href="https://vimeo.com/45830194"
-                                class="popup-vimeo probootstrap-video-play overlay"><span><i
-                                        class="icon-play3"></i></span></a>
-                            <img src="imgLanding/slider_3.jpg" alt="Free HTML5 Bootstrap Template by uicookies.com"
-                                class="img-responsive">
-                        </div>
-                    </figure>
-                </div>
-            </div>
+<!-- Media Partner Section -->
+<section class="media-partner-section">
+    <div class="container">
+        <h2>MEDIA PARTNER</h2>
+        <h3>Dipublikasikan oleh Media Internasional dan Nasional</h3>
+        <div class="media-logos">
+            <img src="img/cnn.png" alt="CNN">
+            <img src="img/bbc.png" alt="BBC">
+            <img src="img/afc.png" alt="AFC">
+            <img src="img/discovery.png" alt="Discovery">
+            <img src="img/aljazeera.png" alt="Al Jazeera">
+            <img src="img/transtv.png" alt="Trans TV">
+            <img src="img/trans7.png" alt="Trans 7">
+            <img src="img/sctv.png" alt="SCTV">
+            <img src="img/rcti.png" alt="RCTI">
+            <img src="img/net.png" alt="NET">
+            <img src="img/metrotv.png" alt="Metro TV">
+            <img src="img/tvri.png" alt="TVRI">
+            <img src="img/tvone.png" alt="TV One">
+            <img src="img/kompas.png" alt="Kompas">
+            <img src="img/indosiar.png" alt="Indosiar">
+            <img src="img/antv.png" alt="ANTV">
         </div>
-    </section>
-    <!-- END section -->
-
-    <section class="probootstrap-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center section-heading probootstrap-animate">
-                    <h2>Recent Work</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 probootstrap-animate">
-                    <div class="probootstrap-card with-hover">
-                        <div class="probootstrap-card-media">
-                            <a href="single-page.html"><img src="imgLanding/slider_1.jpg"
-                                    class="img-responsive img-border" alt="Free HTML5 Template by uicookies.com"></a>
-                        </div>
-                        <div class="probootstrap-card-text">
-                            <h2 class="probootstrap-card-heading mb0">Vokalia and Consonantia</h2>
-                            <p class="category">Design</p>
-                            <p><a href="single-page.html">View details</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 probootstrap-animate">
-                    <div class="probootstrap-card with-hover">
-                        <div class="probootstrap-card-media">
-                            <a href="single-page.html"><img src="imgLanding/slider_2.jpg"
-                                    class="img-responsive img-border" alt="Free HTML5 Template by uicookies.com"></a>
-                        </div>
-                        <div class="probootstrap-card-text">
-                            <h2 class="probootstrap-card-heading mb0">Live the Blind Texts</h2>
-                            <p class="category">Model</p>
-                            <p><a href="single-page.html">View details</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 probootstrap-animate">
-                    <div class="probootstrap-card with-hover">
-                        <div class="probootstrap-card-media">
-                            <a href="single-page.html"><img src="imgLanding/slider_3.jpg"
-                                    class="img-responsive img-border" alt="Free HTML5 Template by uicookies.com"></a>
-                        </div>
-                        <div class="probootstrap-card-text">
-                            <h2 class="probootstrap-card-heading mb0">Behind the Word Mountains</h2>
-                            <p class="category">Website</p>
-                            <p><a href="single-page.html">View details</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- END section -->
-
-    <section class="probootstrap-section probootstrap-section-lighter">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center section-heading probootstrap-animate">
-                    <h2>People Says...</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4  probootstrap-animate">
-                    <div class="probootstrap-testimony">
-                        <blockquote>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts. Separated they live in Bookmarksgrove right at the coast of
-                                the Semantics, a large language ocean.</p>
-                        </blockquote>
-                        <div class="author">
-                            <img src="imgLanding/person_1.jpg" class="img-responsive"
-                                alt="Free HTML5 Bootstrap Theme by uicookies.com">
-                            <div>John Doe <span>Designer at uicookies.com</span></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4  probootstrap-animate">
-                    <div class="probootstrap-testimony">
-                        <blockquote>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts. Separated they live in Bookmarksgrove right at the coast of
-                                the Semantics, a large language ocean.</p>
-                        </blockquote>
-                        <div class="author">
-                            <img src="imgLanding/person_2.jpg" class="img-responsive"
-                                alt="Free HTML5 Bootstrap Theme by uicookies.com">
-                            <div>John Doe <span>Designer at uicookies.com</span></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4  probootstrap-animate">
-                    <div class="probootstrap-testimony">
-                        <blockquote>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts. Separated they live in Bookmarksgrove right at the coast of
-                                the Semantics, a large language ocean.</p>
-                        </blockquote>
-                        <div class="author">
-                            <img src="imgLanding/person_3.jpg" class="img-responsive"
-                                alt="Free HTML5 Bootstrap Theme by uicookies.com">
-                            <div>John Doe <span>Designer at uicookies.com</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- END section -->
-
-
-    <footer class="probootstrap-footer probootstrap-bg">
-        <div class="container">
-            <div class="row mb60">
-                <div class="col-md-3">
-                    <div class="probootstrap-footer-widget">
-                        <h4 class="heading">About Virb.</h4>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                            there live the blind texts. </p>
-                        <p><a href="#">Read more...</a></p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="probootstrap-footer-widget probootstrap-link-wrap">
-                        <h4 class="heading">Quick Links</h4>
-                        <ul class="stack-link">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">Products</a></li>
-                            <li><a href="#">Testimonial</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="probootstrap-footer-widget">
-                        <h4 class="heading">More Links</h4>
-                        <ul class="stack-link">
-                            <li><a href="#">Projects</a></li>
-                            <li><a href="#">Privacy</a></li>
-                            <li><a href="#">Terms</a></li>
-                            <li><a href="#">Career</a></li>
-                            <li><a href="#">Support Help</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="probootstrap-footer-widget">
-                        <h4 class="heading">Subscribe</h4>
-                        <p>Far far away behind the word mountains far from.</p>
-                        <form action="#">
-                            <div class="form-field">
-                                <input type="text" class="form-control" placeholder="Enter your email">
-                                <button class="btn btn-subscribe">Send</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="row copyright">
-                <div class="col-md-6">
-                    <div class="probootstrap-footer-widget">
-                        <p>&copy; 2017 <a href="https://uicookies.com/">uiCookies:Virb</a>. Designed by <a
-                                href="https://uicookies.com/">uicookies.com</a> <br> Demo Photos from <a
-                                href="https://unsplash.com/">Unsplash</a></p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="probootstrap-footer-widget right">
-                        <ul class="probootstrap-social">
-                            <li><a href="#"><i class="icon-twitter"></i></a></li>
-                            <li><a href="#"><i class="icon-facebook"></i></a></li>
-                            <li><a href="#"><i class="icon-instagram2"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <div class="gototop js-top">
-        <a href="#" class="js-gotop"><i class="icon-chevron-thin-up"></i></a>
     </div>
+</section>
 
 
-    <script src="{{ asset('assets/css/assetsLanding/jsLanding/scripts.min.js') }}"></script>
-    <script src="{{ asset('assets/css/assetsLanding/jsLanding/main.min.js') }}"></script>
-    <script src="{{ asset('assets/css/assetsLanding/jsLanding/custom.js') }}"></script>
+<!-- Promo Section -->
+<section class="promo-section" >
+    <div class="container" style="background:rgba(0, 0, 0, 0.75);">
+        <h2>Promo Akhir Tahun Laweyan</h2>
+        <p>Dapatkan diskon 50% untuk pembelian online</p>
+        <a href="#" class="btn-get-promo">Beli Sekarang</a>
+    </div>
+</section>
 
-    {{-- <script src="js/scripts.min.js"></script>
-  <script src="js/main.min.js"></script>
-  <script src="js/custom.js"></script> --}}
+<!-- Footer -->
+<footer>
+    <div class="container footer-top">
+        <div class="footer-column footer-contact">
+            <img src="img/logo2.png" alt="Logo">
+            <p>Lorem ipsum dolor sit amet consectetur. diam pellentesque feugiat accumsan lorem mauris. Vestibulum rhoncus</p>
+        </div>
+        <div class="footer-column">
+            <h3>Produk</h3>
+            <ul>
+                <li><a href="#">Batik Wanita</a></li>
+                <li><a href="#">Batik Pria</a></li>
+                <li><a href="#">Batik Anak-anak</a></li>
+                <li><a href="#">Batik Keluarga</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Bantuan</h3>
+            <ul>
+                <li><a href="#">Syarat dan Ketentuan</a></li>
+                <li><a href="#">Pertanyaan (FAQ)</a></li>
+                <li><a href="#">Cara Belanja</a></li>
+                <li><a href="#">Customer Service</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Mitra Kami</h3>
+            <img src="img/mitra1.png" alt="Mitra 1">
+            <img src="img/mitra2.png" alt="Mitra 2">
+            <img src="img/mitra3.png" alt="Mitra 3">
+        </div>
+        <div class="footer-column footer-contact">
+            <h3>Layanan Kontak Kami</h3>
+            <p>+62 859 8989 999</p>
+            <p>Senin - Jumat: 9:00 - 20:00</p>
+            <p>Sabtu: 11:00 - 15:00</p>
+        </div>
+    </div>
+    <div class="container footer-bottom">
+        <p>&copy; 2024 Batik Wonderland Laweyan. All Rights Reserved.</p>
+    </div>
+</footer>
 
+
+
+    <script src="{{ asset('js/main.js') }}"></script>
 </body>
-
 </html>
