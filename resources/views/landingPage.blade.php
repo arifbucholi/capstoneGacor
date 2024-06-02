@@ -6,7 +6,9 @@
     <title>Landing Page</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/customLanding.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
+
 <body>
     <!-- Navigation -->
     <nav id="navbar" class="navbar">
@@ -161,21 +163,33 @@
     </div>
 </section>
 
+<section class="hero-section2" style="background-image: url('img/batik.jpg');">
+        <div class="hero-overlay2">
+            <div class="hero-text2">
+            <p>Diskon 50% Pembelian Online</p>
+            <h2>Promo Akhir Tahun Laweyan</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel dolor pellentesque, varius elit quis, malesuada quam.</p>
+            <a href="#" class="btn-get-promo">Beli Sekarang</a>
+            </div>
+        </div>
+    </section>
 
-<!-- Promo Section -->
-<section class="promo-section" >
-    <div class="container" style="background:rgba(0, 0, 0, 0.75);">
-        <h2>Promo Akhir Tahun Laweyan</h2>
-        <p>Dapatkan diskon 50% untuk pembelian online</p>
-        <a href="#" class="btn-get-promo">Beli Sekarang</a>
+<!-- <section >
+    <div class="promo-overlay">
+        <div class="promo-text">
+            <p>Diskon 50% Pembelian Online</p>
+            <h2>Promo Akhir Tahun Laweyan</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel dolor pellentesque, varius elit quis, malesuada quam.</p>
+            <a href="#" class="btn-get-promo">Beli Sekarang</a>
+        </div>
     </div>
-</section>
+</section> -->
 
 <!-- Footer -->
 <footer>
     <div class="container footer-top">
         <div class="footer-column footer-contact">
-            <img src="img/logo2.png" alt="Logo">
+        <img src="img/logo2.png" alt="Logo">
             <p>Lorem ipsum dolor sit amet consectetur. diam pellentesque feugiat accumsan lorem mauris. Vestibulum rhoncus</p>
         </div>
         <div class="footer-column">
@@ -198,21 +212,38 @@
         </div>
         <div class="footer-column">
             <h3>Mitra Kami</h3>
-            <img src="img/mitra1.png" alt="Mitra 1">
-            <img src="img/mitra2.png" alt="Mitra 2">
-            <img src="img/mitra3.png" alt="Mitra 3">
+            <div class="mitra-logos">
+                <img src="img/mitra1.png" alt="Mitra 1">
+                <img src="img/mitra2.png" alt="Mitra 2">
+                <img src="img/mitra3.png" alt="Mitra 3">
+                <img src="img/mitra4.png" alt="Mitra 4">
+                <img src="img/mitra5.png" alt="Mitra 5">
+            </div>
         </div>
         <div class="footer-column footer-contact">
             <h3>Layanan Kontak Kami</h3>
             <p>+62 859 8989 999</p>
             <p>Senin - Jumat: 9:00 - 20:00</p>
             <p>Sabtu: 11:00 - 15:00</p>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
         </div>
     </div>
     <div class="container footer-bottom">
         <p>&copy; 2024 Batik Wonderland Laweyan. All Rights Reserved.</p>
     </div>
 </footer>
+
+
+
+
+
+
+
 
 
 
