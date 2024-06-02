@@ -1,0 +1,478 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Banner Slider Section */
+.banner-slider {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 0 20px;
+}
+
+.banner-slider .banner-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-slider .banner-image {
+    width: 100%;
+    height: auto;
+}
+
+/* Special Discount Section */
+.special-discount {
+    padding: 50px 0;
+    background-color: #fff;
+}
+
+.special-discount .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.special-discount .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.special-discount .header h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.special-discount .header .header-line {
+    flex: 1;
+    height: 2px;
+    background-color: #333;
+    margin-left: 10px;
+}
+
+.special-discount .discount-content {
+    display: flex;
+    gap: 20px;
+}
+
+.special-discount .discount-card {
+    flex: 1;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: left;
+    background-image: url(../img/bgg.png);
+}
+
+.special-discount .discount-card .discount-info {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.special-discount .discount-card .discount-info h1 {
+    font-size: 60px;
+    color: #7d4b1e; /* Warna teks 75% */
+    margin: 20px 0;
+}
+
+.special-discount .discount-card .discount-info .terms {
+    font-size: 12px;
+    color: #333;
+    margin-right: 50px;
+}
+
+.special-discount .product-cards {
+    flex: 3;
+    display: flex;
+    gap: 20px;
+}
+
+.special-discount .product-card {
+    flex: 1;
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+}
+
+.special-discount .product-card img {
+    width: 100%;
+    height: auto;
+}
+
+.special-discount .product-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.special-discount .product-info {
+    padding: 10px;
+    text-align: center;
+}
+
+.special-discount .product-info p {
+    margin: 5px 0;
+}
+
+.special-discount .product-info .discounted {
+    text-decoration: line-through;
+    color: #999;
+    margin-left: 10px;
+}
+
+/* Produk Page */
+.produk-page .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sort-options-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.sort-options {
+    display: flex;
+    align-items: center;
+}
+
+.sort-options label {
+    margin-right: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.sort-options select {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+}
+
+.view-options {
+    display: flex;
+    align-items: center;
+}
+
+.view-button {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-left: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.view-button:hover {
+    background-color: #eee;
+}
+
+.view-button.active {
+    background-color: #ffcc99;
+    border-color: #ffcc99;
+}
+
+.view-button i {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Koleksi Batik Laweyan Section */
+.koleksi-batik {
+    padding: 50px 0;
+    background-color: #fff;
+}
+
+.koleksi-batik .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.koleksi-batik .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.koleksi-batik .section-header h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.koleksi-batik .sort-options {
+    display: flex;
+    align-items: center;
+}
+
+.koleksi-batik .sort-options label {
+    margin-right: 10px;
+}
+
+.koleksi-batik .sidebar-and-products {
+    display: flex;
+    gap: 20px;
+}
+
+.koleksi-batik .sidebar {
+    flex: 1;
+    max-width: 300px;
+}
+
+.koleksi-batik .filter-category,
+.koleksi-batik .filter-price,
+.koleksi-batik .filter-size {
+    margin-bottom: 20px;
+}
+
+.koleksi-batik .filter-category h3,
+.koleksi-batik .filter-price h3,
+.koleksi-batik .filter-size h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.koleksi-batik .filter-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.koleksi-batik .filter-category ul li {
+    margin-bottom: 5px;
+}
+
+.koleksi-batik .filter-price input {
+    width: 100%;
+}
+
+.koleksi-batik .filter-size .sizes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.koleksi-batik .products {
+    flex: 3;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.koleksi-batik .product-card {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+    text-align: left;
+    max-width: 200px;
+    margin: 10px;
+}
+
+.koleksi-batik .product-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.koleksi-batik .product-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.koleksi-batik .product-info {
+    padding: 10px;
+    text-align: center;
+}
+
+.koleksi-batik .product-rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.koleksi-batik .product-rating .star {
+    color: #FFD700;
+    margin-right: 5px;
+}
+
+.koleksi-batik .product-rating .rating {
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.koleksi-batik .product-rating .sold {
+    font-size: 14px;
+    color: #888;
+}
+
+.koleksi-batik .product-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.koleksi-batik .product-price {
+    font-size: 14px;
+    color: #888;
+    display: flex;
+    flex-direction: column;
+}
+
+.koleksi-batik .discounted {
+    text-decoration: line-through;
+    color: #999;
+    margin-left: 10px;
+}
+
+.koleksi-batik .current-price {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    text-align: left;
+}
+
+.koleksi-batik .pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.koleksi-batik .pagination a {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #6f4e37;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.koleksi-batik .pagination a:hover {
+    background: #985A33;
+}
+
+/* Sidebar */
+.sidebar {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.sidebar h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.filter-category ul,
+.filter-size .sizes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.filter-category ul li,
+.filter-size .sizes label {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #555;
+}
+
+.filter-category ul li label,
+.filter-size .sizes label {
+    display: flex;
+    align-items: center;
+}
+
+.filter-category ul li input[type="checkbox"],
+.filter-size .sizes input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.filter-category ul li label input:checked + label,
+.filter-size .sizes label input:checked + label {
+    font-weight: bold;
+    color: #985A33; /* Adjust color to match the theme */
+}
+
+/* Sizes */
+.filter-size .sizes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-size .sizes label {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.filter-size .sizes input[type="checkbox"] {
+    display: none;
+}
+
+.filter-size .sizes input[type="checkbox"]:checked + label {
+    background: #985A33;
+    color: #fff;
+    border-color: #985A33;
+}
+
+.pagination-container {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 50%;
+}
+
+.pagination-link, .pagination-arrow {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 0 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination-link:hover, .pagination-arrow:hover {
+    background-color: #f0f0f0;
+}
+
+.pagination-link.active {
+    background-color: #7d4b1e; /* Adjust the active background color */
+    color: #fff;
+    border-color: #7d4b1e;
+}
+
+.pagination-dots {
+    margin: 0 5px;
+    font-size: 16px;
+    color: #888;
+}
