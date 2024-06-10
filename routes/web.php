@@ -24,6 +24,19 @@ Route::get('/laravel', function () {
     return view('welcome');
 });
 
+Route::get('/detail-produk', function () {
+    return view('detailProdukPage');
+});
+
+Route::get('/checkout', function () {
+    return view('checkoutPage');
+});
+
+Route::get('/artikel', function () {
+    return view('artikelPage');
+});
+
+
 Route::get('/auth/redirect', [SocialiteController::class, 'redirect']);
 
 Route::get('/auth/google/callback', [SocialiteController::class, 'callback']);
