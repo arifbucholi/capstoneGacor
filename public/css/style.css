@@ -46,6 +46,13 @@
     gap: 20px;
 }
 
+.navbar-right .nav-links img {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 35%;
+    height: 35%;
+}
+
 .navbar-left .nav-links li,
 .navbar-right .nav-links li {
     display: inline;
@@ -60,16 +67,29 @@
 .navbar-left .nav-links a:hover,
 .navbar-right .nav-links a:hover {
     text-decoration: underline;
+    /* color: black; */
 }
 
 .navbar.scrolled {
-    background-color: #985A33;
+    background-color: #985a33;
     transition: background-color 0.5s;
 }
 
 .navbar.hidden {
     transform: translateY(-100%);
     transition: transform 0.8s;
+}
+
+.cart-logo {
+    font-size: large;
+    margin-left: 15px;
+    color: white;
+}
+.vertical-line {
+    width: 1.2px;
+    height: 24px;
+    background-color: #c6c6c6;
+    margin: 0 15px;
 }
 
 .search-form input[type="text"] {
@@ -79,7 +99,6 @@
     width: 200px;
     transition: width 0.3s ease;
     background: transparent;
-    margin-right: 20px;
 }
 
 .search-form input[type="text"]:focus {
@@ -247,67 +266,185 @@
     background-color: #b96523;
 }
 
+/* Article Page*/
+.container-articles{
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+.latest-articles,
+.all-articles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.article-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    width: 30%;
+}
+
+.article-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.article-item p {
+    font-size: 14px;
+    color: #333;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.pagination a.active {
+    background-color: #4caf50;
+    color: white;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+}
+/* End Article Page */
+
 /* Footer */
 footer {
-    background: #a05c37;
-    color: #fff;
-    padding: 65px 0;
-}
-.footer-contact {
-    display: flex;
-    flex-direction: column;
-    color: #fff;
+    background: #FFF7F2;
+    padding: 40px 0;
+    color: #333;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    font-family: Arial, sans-serif;  /* Pastikan semua teks menggunakan font yang sama */
 }
 
-.contact-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 5px;
-}
-
-.contact-label {
-    min-width: 80px; /* Adjust width according to the longest label */
-    font-weight: bold;
-    margin-right: 10px;
-}
-
-.contact-value {
-    flex: 1;
-}
-
-/* Example container styling */
-.footer-contact h4 {
-    margin-bottom: 10px;
-}
-footer .footer-content {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-footer .container {
+footer .footer-top {
     display: flex;
     justify-content: space-between;
     padding: 20px 60px;
+    border-bottom: 1px solid #ddd;
 }
-footer div {
+
+footer .footer-column {
     flex: 1;
+    text-align: left;
 }
-footer div ul {
+
+footer .footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+footer .footer-column ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
-footer div ul li {
-    /* margin-bottom: 0px; */
-    margin-top: 6px;
+
+footer .footer-column ul li {
+    margin-bottom: 10px;
 }
-footer div ul li a {
-    color: #fff;
+
+footer .footer-column ul li a {
+    color: #637381;
     text-decoration: none;
+    transition: color 0.3s;
+    font-family: Arial, sans-serif;  /* Pastikan font konsisten */
+}
+
+footer .footer-column ul li a:hover {
+    color: #985A33;
+}
+
+footer .footer-bottom {
+    margin-top: 20px;
+    color: #637381;
+}
+
+.footer-contact p {
+    margin: 5px 0;
+    font-family: Arial, sans-serif;  /* Pastikan font konsisten */
+}
+
+.footer-contact img {
+    max-width: 150px;
+}
+
+footer .footer-last{
+    text-align: end;
+}
+
+.footer-social a {
+    margin: 0 10px;
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;;
+}
+
+.footer-social a i{
+    text-align: end;
+}
+
+.footer-social a:hover {
+    color: #985A33;
+}
+
+.footer-column.footer-contact p {
+    color: #637381;
     font-size: 14px;
+    font-weight: 400;
 }
-footer div ul li a:hover {
-    text-decoration: underline;
+
+.footer-column.footer-contact p:first-child {
+    color: #333;
+    font-size: 14px;
+    font-weight: normal;
+    margin-top: 10px;
 }
+
+.footer-social {
+    display: flex;
+    justify-content: end;
+    margin-top: 20px;
+}
+
+.footer-social a {
+    margin: 0 5px;
+}
+
+.footer-last p.notelp{
+    color: black;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+.mitra-logos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Create 3 columns */
+    gap: 10px; /* Adjust the gap between images as needed */
+}
+
+.mitra-logos img {
+    width: 100%;
+    height: auto; /* Ensure the images are responsive */
+    display: block; /* Remove any extra space below images */
+}
+/* End Footer */
+
 .clearfix::after {
     content: "";
     clear: both;

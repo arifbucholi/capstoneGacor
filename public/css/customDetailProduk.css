@@ -1,0 +1,473 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #333;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    padding: 10px 80px;
+    margin: 5.7% 0 3% 0;
+    background-color: #fdfbe7; /* Adjust the background color if needed */
+}
+
+.breadcrumb-item {
+    color: #74797d;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.breadcrumb-item i {
+    margin-right: 5%;
+}
+
+.breadcrumb-separator {
+    margin: 0 17px;
+    color: #74797d;
+}
+
+.breadcrumb-item.active {
+    color: #8b4513;
+    font-weight: bold;
+}
+
+/* Product */
+.product-page {
+    display: flex;
+    max-width: 1200px;
+    background: white;
+    margin: 20px auto;
+    padding: 20px 85px;
+}
+
+.product-images,
+.product-details {
+    width: 50%;
+    margin: 0 40px;
+}
+
+.product-images .bg-main-img {
+    background-color: #ebebeb;
+    width: 100%;
+    height: 435px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.product-images .main-image {
+    width: 80%;
+    height: auto;
+}
+
+.thumbnail-images {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 17px;
+}
+
+.thumbnail-images img {
+    display: block;
+    width: 80%;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.bg-img-product {
+    background-color: #ebebeb;
+    width: 100%;
+    height: 140px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.thumbnail-images .bg-img-product:nth-child(2) {
+    margin: 0 17px;
+}
+
+.product-details h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.rating span {
+    margin-right: 10px;
+}
+
+.price {
+    display: flex;
+    align-items: baseline;
+    margin: 30px 0;
+}
+
+.price .current-price {
+    font-size: 24px;
+    color: black;
+    margin-right: 10px;
+}
+
+.price .current-price .rp {
+    font-size: 20px;
+}
+
+.price .current-price .nominal {
+    font-weight: 600;
+}
+.price .original-price {
+    font-size: 15px;
+    font-weight: normal;
+    text-decoration: line-through;
+    margin-right: 10px;
+    color: #a4a4a4;
+}
+
+.price .discount {
+    font-size: 15px;
+    font-weight: bold;
+    color: #985a33;
+}
+
+.description {
+    margin-bottom: 20px;
+    color: #6d7379;
+    text-align: justify;
+    font-size: 13px;
+}
+
+.detail-product {
+    margin: 20px 0;
+}
+
+.detail-product .detail-item {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 13px;
+}
+
+.detail-item .left {
+    font-weight: bold;
+}
+
+.detail-item .right {
+    font-weight: normal;
+}
+
+hr.detail-hr {
+    border: 0.9px solid #dcdee1;
+    margin: 15px 0;
+}
+
+.size-selection .title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.size-selection .title span {
+    color: #985a33;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.sizes {
+    width: 100%;
+}
+
+.first-row,
+.second-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+
+.sizes input[type="radio"] {
+    display: none;
+}
+
+.sizes label {
+    padding: 12px 40px;
+    border: 1px solid #ddd;
+    background: none;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sizes input[type="radio"]:checked + label {
+    background-color: #fff4cf;
+    color: #985a33;
+    border-color: #985a33;
+}
+
+.sizes label:hover {
+    background-color: #fff4cf;
+    color: #985a33;
+    border-color: #985a33;
+}
+
+.sizes input[type="radio"] + label.selected {
+    background-color: #fff4cf;
+    color: #985a33;
+    border-color: #985a33;
+}
+
+.quantity-selection {
+    margin: 20px 0;
+}
+
+.quantity-selection .quantity {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-selection .box-quantity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border: 1.5px solid #dfe4ea;
+    border-radius: 4px; /* Optional: for rounded corners */
+}
+
+.quantity-selection .box-quantity button,
+.quantity-selection .box-quantity input {
+    padding: 10px;
+    background: none;
+    border: none;
+    outline: none;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.quantity-selection .box-quantity button {
+    width: 40px;
+    color: #985a33;
+    font-size: large;
+    font-weight: bolder;
+}
+
+.quantity-selection .box-quantity input {
+    width: 60px;
+    pointer-events: none;
+    text-align: center; /* Center the text inside the input */
+    -moz-appearance: textfield; /* Remove default styling in Firefox */
+}
+
+.quantity-selection .quantity span {
+    font-size: 12px;
+    margin-left: 25px;
+    font-weight: 700;
+}
+
+/* Remove input number arrows for Webkit browsers (Chrome, Safari, Edge) */
+.quantity-selection .box-quantity input::-webkit-outer-spin-button,
+.quantity-selection .box-quantity input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Remove input number arrows for Firefox */
+.quantity-selection .box-quantity input[type="number"] {
+    -moz-appearance: textfield; /* Remove default styling in Firefox */
+}
+
+.action-buttons button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 13px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 6px;
+    margin: 10px 0;
+}
+
+.action-buttons .buy-now {
+    background-color: #985a33;
+    color: white;
+    width: 100%;
+    font-size: 12px;
+}
+
+.action-buttons .add-to-cart {
+    background-color: white;
+    border: 1px solid #985a33;
+    color: #985a33;
+    font-size: 12px;
+}
+
+/* Review */
+h1.title-review {
+    margin: 0 40px 20px 40px;
+    padding: 20px 85px;
+}
+
+.review {
+    display: flex;
+    gap: 2rem;
+    margin: 0 40px 20px 40px;
+    padding: 0 85px 20px 85px;
+}
+
+.review-summary {
+    width: 26%;
+    height: min-content;
+    background-color: #fff;
+    box-shadow: 4px 8px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px 40px;
+    border-radius: 8px;
+}
+
+.review-summary h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.rating-score {
+    display: flex;
+    align-items: baseline;
+    gap: 0.8rem;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.7rem;
+}
+
+span.star {
+    color: #FFB931;
+}
+
+span.rating-number {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: #222225;
+}
+
+span.rating-total {
+    font-weight: 500;
+    font-size: 14px;
+    color: #222222;
+}
+
+.rating-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.rating-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.rating-bar span#i-star {
+    font-size: 13px;
+}
+
+span#i-star i#i-star {
+    color: #FFB931;
+    margin-right: 2.5px;
+}
+
+span.value-rating {
+    font-size: 13px;
+}
+
+.rating-bar .bar {
+    flex: 1;
+    height: 0.5rem;
+    background-color: #e0e0e0;
+    border-radius: 0.25rem;
+    overflow: hidden;
+}
+
+.rating-bar .fill {
+    height: 100%;
+    background-color: #FFB931;
+}
+
+.review-details {
+    width: 74%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.review-item {
+    background-color: #fff;
+    box-shadow: 4px 8px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.reviewer-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.reviewer-info img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.reviewer-info h3 {
+    margin: 2.5px 0;
+    font-size: 1rem;
+}
+
+.reviewer-info p {
+    margin: 0;
+    color: #777;
+    font-size: 0.83rem;
+}
+
+.rating {
+    display: flex;
+    align-items: baseline;
+    margin-left: auto;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #111928;
+}
+
+.reviewer-info .rating span {
+    color: #F59E0B;
+    font-size: 0.95rem;
+    margin-left: 6px;
+}
+
+hr.review-hr {
+    border: 1px solid #DBDBDB;
+    margin: 15px 0;
+}
+
+.review-item p {
+    margin-top: 20px;
+    color: #637381;
+    font-size: 14px;
+    text-align: justify;
+}

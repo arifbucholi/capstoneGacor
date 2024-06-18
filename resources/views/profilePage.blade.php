@@ -7,32 +7,15 @@
     <title>Profil Saya</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/customNav.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/customLanding.css') }}">
     <link rel="stylesheet" href="{{ asset('css/customProfile.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
 </head>
 
 <body>
-    <nav id="navbar" class="navbar">
-        <div class="container">
-            <div class="navbar-left">
-                <a href="#" class="logo"><img src="img/logo2.png" alt="Logo"></a>
-                <ul class="nav-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="/product">Product</a></li>
-                    <li><a href="#">Article</a></li>
-                </ul>
-            </div>
-            <div class="navbar-right">
-                <form class="search-form">
-                    <input type="text" placeholder="Search">
-                </form>
-                <ul class="nav-links">
-                    <li><a href="/login">Login</a></li>
-                    <li><a href="#">Cart</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    @php
+        $menu = "profile";
+    @endphp
+    @include('partials.navbar2')
 
     <div class="containerProfile">
         <div class="sidebar">
@@ -116,48 +99,8 @@
         </div>
     </div>
 
-    <footer>
-        <div class="container footer-top">
-            <div class="footer-column footer-contact">
-                <img src="img/logo2.png" alt="Logo">
-                <p>Lorem ipsum dolor sit amet consectetur. diam pellentesque feugiat accumsan lorem mauris. Vestibulum
-                    rhoncus</p>
-            </div>
-            <div class="footer-column">
-                <h3>Produk</h3>
-                <ul>
-                    <li><a href="#">Batik Wanita</a></li>
-                    <li><a href="#">Batik Pria</a></li>
-                    <li><a href="#">Batik Anak-anak</a></li>
-                    <li><a href="#">Batik Keluarga</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Bantuan</h3>
-                <ul>
-                    <li><a href="#">Syarat dan Ketentuan</a></li>
-                    <li><a href="#">Pertanyaan (FAQ)</a></li>
-                    <li><a href="#">Cara Belanja</a></li>
-                    <li><a href="#">Customer Service</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Mitra Kami</h3>
-                <img src="img/mitra1.png" alt="Mitra 1">
-                <img src="img/mitra2.png" alt="Mitra 2">
-                <img src="img/mitra3.png" alt="Mitra 3">
-            </div>
-            <div class="footer-column footer-contact">
-                <h3>Layanan Kontak Kami</h3>
-                <p>+62 859 8989 999</p>
-                <p>Senin - Jumat: 9:00 - 20:00</p>
-                <p>Sabtu: 11:00 - 15:00</p>
-            </div>
-        </div>
-        <div class="container footer-bottom">
-            <p>&copy; 2024 Batik Wonderland Laweyan. All Rights Reserved.</p>
-        </div>
-    </footer>
+    {{-- Footer --}}
+    @include('partials.footer')
 
     <script>
         function loadFile(event) {

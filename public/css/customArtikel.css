@@ -1,0 +1,235 @@
+/* Custom Artikel CSS */
+.artikel {
+    padding: 100px 50px 0 50px;
+    background-color: #fff;
+    text-align: start;
+    display: flex;
+    justify-content: center;
+}
+
+.artikel h1 {
+    margin-bottom: 15px;
+}
+
+.artikel p {
+    width: 47%;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.artikel-header {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.artikel .artikel-item p {
+    width: 100%;
+    font-size: 16px;
+    color: #555;
+}
+
+/* Artikel List */
+.artikel-list {
+    padding: 50px 50px;
+}
+
+.artikel-list hr {
+    width: 7%;
+    margin: 15px 0;
+    border: 1.8px solid #744223;
+}
+
+.artikel-items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.artikel-item {
+    flex: 1;
+    margin-bottom: 10px;
+}
+
+.artikel-item h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #333;
+}
+
+.artikel-item p {
+    font-size: 14px;
+    color: #888;
+}
+
+.artikel-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* End Artikel List */
+
+/* Artikel Mini */
+.artikel-mini {
+    background-color: #f8f8f8;
+    padding: 20px 50px;
+}
+
+.artikel-mini hr {
+    width: 7%;
+    margin: 15px 0;
+    border: 1.8px solid #744223;
+}
+
+.artikel-mini .list {
+    display: flex;
+    justify-content: space-between;
+    margin-left: -3.8%;
+}
+
+.artikel-mini .artikel-item-mini {
+    display: flex;
+    align-items: center;
+    width: 33.3%;
+}
+
+.artikel-mini .artikel-item-mini img {
+    width: 65px;
+    height: 65px;
+    border-radius: 10px;
+    margin-right: 15px;
+}
+
+.artikel-mini .artikel-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.artikel-mini .artikel-content h3 {
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0;
+}
+
+.artikel-mini .artikel-content p {
+    font-size: 0.9em;
+    color: #888;
+    margin: 5px 0 0;
+}
+/* End Artikel Mini */
+
+/* Artikel Banner */
+
+.artikel-banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 243px; /* Set height to 443 pixels */
+    overflow: hidden;
+}
+
+.artikel-banner .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(39, 20, 16, 0.9); /* #271410 color with 70% opacity */
+    z-index: 1;
+}
+
+.artikel-banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("../img/banner.jpg"); /* Adjust the path as necessary */
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    color: white;
+    text-align: left; /* Align text to the left */
+}
+
+.text-content p{
+    font-size: small;
+}
+
+
+.subscribe-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.subscribe-form input[type="email"] {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+}
+
+.subscribe-form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #985A33;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.subscribe-form button:hover {
+    background-color: #5a2d0c;
+}
+
+/* End Artikel Banner */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    padding: 10px 15px;
+    background-color: #6f4e37;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.pagination a.active {
+    background-color: #985a33;
+}
+
+.pagination-dots {
+    font-size: larger;
+    color: #888;
+    display: flex;
+    align-items: end;
+}
