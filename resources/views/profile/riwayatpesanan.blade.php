@@ -1,22 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.main')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil Saya</title>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/customNav.css') }}">
+@section('css')
     <link rel="stylesheet" href="{{ asset('css/customRiwayat.css') }}">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
-</head>
+@endsection
 
-<body>
+@section('main')
     @php
         $menu = 'profile';
     @endphp
-    @include('partials.navbar2')
+    @include('partials.navbar')
 
     <section class="riwayat-pesanan-container">
         <div class="sidebar">
@@ -47,7 +39,7 @@
                 <div id="selesai">Selesai</div>
                 <div id="dibatalkan">Dibatalkan</div>
             </div>
-            <hr style="border: 1px solid #DFE4EA">
+            <hr>
             <div class="pesanan-item">
                 <div class="pesanan-details">
                     <div class="bg-image">
@@ -55,12 +47,14 @@
                     </div>
                     <div class="pesanan-info">
                         <div class="pesanan-name">BSB101_Batik Sogan Laweyan Blus Salur Wanita</div>
-                        <div class="pesanan-size">Ukuran: Medium ( M )</div>
-                        <div class="pesanan-price">1 barang x <span class="harga">Rp.490.000</span> <span
-                                class="discount">Rp.980.000 50%</span></div>
+                        <div class="rincian-pesanan">
+                            <div class="pesanan-size">Ukuran: Medium ( M )</div>
+                            <div class="pesanan-price">1 barang x <span class="harga">Rp.490.000</span> <span
+                                    class="discount">Rp.490.000</span><span class="discount-percent">50%</span></div>
+                        </div>
                     </div>
                 </div>
-                <div class="pesanan-status sedang-dikirim">Sedang dikirim</div>
+                <div class="pesanan-status dikirim">Sedang dikirim</div>
             </div>
             <div class="pesanan-item">
                 <div class="pesanan-details">
@@ -69,9 +63,11 @@
                     </div>
                     <div class="pesanan-info">
                         <div class="pesanan-name">RPYB103_Batik Rok Payung Wanita</div>
-                        <div class="pesanan-size">Ukuran: Medium ( M )</div>
-                        <div class="pesanan-price">1 barang x <span class="harga">Rp.225.000</span> <span
-                                class="discount">Rp.980.000 50%</span></div>
+                        <div class="rincian-pesanan">
+                            <div class="pesanan-size">Ukuran: Medium ( M )</div>
+                            <div class="pesanan-price">1 barang x <span class="harga">Rp.225.000</span><span
+                                    class="discount">Rp.980.000</span><span class="discount-percent">50%</span></div>
+                        </div>
                     </div>
                 </div>
                 <div class="pesanan-status selesai">Pesanan Selesai</div>
@@ -83,21 +79,35 @@
                     </div>
                     <div class="pesanan-info">
                         <div class="pesanan-name">BSB101_Batik Sogan Laweyan Blus Salur Wanita</div>
-                        <div class="pesanan-size">Ukuran: Medium ( M )</div>
-                        <div class="pesanan-price">1 barang x <span class="harga">Rp.490.000</span></div>
+                        <div class="rincian-pesanan">
+                            <div class="pesanan-size">Ukuran: Medium ( M )</div>
+                            <div class="pesanan-price">1 barang x <span class="harga">Rp.490.000</span></div>
+                        </div>
                     </div>
                 </div>
                 <div class="pesanan-status selesai">Pesanan Selesai</div>
             </div>
+            <div class="no-items" style="display: none;">Tidak ada pesanan yang ditemukan</div>
         </div>
 
     </section>
+@endsection
 
-
-    {{-- Footer --}}
-    @include('partials.footer')
-
+@section('js')
     <script>
+        function applyNoBorderClass() {
+            const pesananItems = document.querySelectorAll('.pesanan-item');
+            const visibleItems = Array.from(pesananItems).filter(item => item.style.display !== 'none');
+
+            // Remove the no-border class from all items first
+            pesananItems.forEach(item => item.classList.remove('no-border'));
+
+            // Add the no-border class to the last visible item
+            if (visibleItems.length > 0) {
+                visibleItems[visibleItems.length - 1].classList.add('no-border');
+            }
+        }
+
         document.querySelectorAll('.menu div').forEach(menuItem => {
             menuItem.addEventListener('click', () => {
                 // Remove active class from all menu items
@@ -107,28 +117,33 @@
 
                 // Get the status to filter by
                 const status = menuItem.id;
+                let hasItems = false;
+
                 // Show/hide items based on the status
                 document.querySelectorAll('.pesanan-item').forEach(item => {
                     if (status === 'all') {
                         item.style.display = 'flex';
+                        hasItems = true;
                     } else {
                         const itemStatus = item.querySelector('.pesanan-status').classList;
-                        item.style.display = itemStatus.contains(status) ? 'flex' : 'none';
+                        if (itemStatus.contains(status)) {
+                            item.style.display = 'flex';
+                            hasItems = true;
+                        } else {
+                            item.style.display = 'none';
+                        }
                     }
                 });
+
+                // Display no items message if no items are found
+                document.querySelector('.no-items').style.display = hasItems ? 'none' : 'block';
+
+                // Apply the no-border class to the last visible item
+                applyNoBorderClass();
             });
         });
-    </script>
-    <script>
-        window.addEventListener('scroll', function() {
-            var navbar = document.getElementById('navbar');
-            if (window.scrollY > 0) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-    </script>
-</body>
 
-</html>
+        // Apply no-border class on initial load
+        document.addEventListener('DOMContentLoaded', applyNoBorderClass);
+    </script>
+@endsection

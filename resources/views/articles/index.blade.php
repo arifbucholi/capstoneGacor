@@ -1,25 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.main')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artikel</title>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/customNav.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/customLanding.css') }}">
+@section('css')
     <link rel="stylesheet" href="{{ asset('css/customArtikel.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
-</head>
+@endsection
 
-<body>
-    <!-- Navigation -->
+@section('main')
+    <!-- Navbar -->
     @php
         $menu = 'artikel';
     @endphp
-    @include('partials.navbar2')
+    @include('partials.navbar')
 
     <!-- Artikel Section -->
     <section class="artikel">
@@ -158,10 +148,4 @@
             </form>
         </div>
     </section>
-
-    @include('partials.footer')
-    <script src="{{ asset('js/main.js') }}"></script>
-
-</body>
-
-</html>
+@endsection

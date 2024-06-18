@@ -1,26 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail Artikel</title>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/customNav.css') }}">
+@extends('layouts.main')
+@section('css')
     <link rel="stylesheet" href="{{ asset('css/customDetailArtikel.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
-</head>
+@endsection
 
-<body>
-    <!-- Navigation -->
+@section('main')
+    <!-- Navbar -->
     @php
         $menu = 'artikel';
     @endphp
-    @include('partials.navbar2')
+    @include('partials.navbar')
 
-    {{-- Breadcumb --}}
     <div class="breadcrumb">
         <a href="/" class="breadcrumb-item"><i class="bi bi-house"></i> Beranda</a>
         <span class="breadcrumb-separator">&gt;</span>
@@ -28,7 +17,6 @@
         <span class="breadcrumb-separator">&gt;</span>
         <span class="breadcrumb-item active">Detail Artikel</span>
     </div>
-    {{-- End Breadcumb --}}
 
     <div class="article">
         <h1>Paket Wisata Solo di Kampoeng Batik Lawean</h1>
@@ -67,7 +55,7 @@
         <div class="quote-box">
             <i class="fas fa-quote-right" id="icon-quote"></i>
             <p>Lorem ipsum dolor sit amet consectetur. Arcu vitae aliquet ipsum odio accumsan. Hac
-            euismod massa egestas penatibus ornare molestie placerat neque consectetur. Nec sed ipsum sem</p>
+                euismod massa egestas penatibus ornare molestie placerat neque consectetur. Nec sed ipsum sem</p>
             <span>- Quote Name</span>
         </div>
         <h2>Lorem ipsum dolor sit amet</h2>
@@ -140,10 +128,4 @@
             </div>
         </div>
     </div>
-
-    {{-- Footer --}}
-    @include('partials.footer')
-    <script src="{{ asset('js/main.js') }}"></script>
-</body>
-
-</html>
+@endsection
