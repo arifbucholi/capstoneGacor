@@ -121,7 +121,26 @@
                         </div>
                     </div>
                     <div class="products">
+                        @foreach ($products as $product)
                         <div class="product-card">
+                            <div class="product-image">
+                                <img src="{{ asset('img/' . $product->image) }}" alt="{{ $product->name }}">
+                            </div>
+                            <div class="product-info">
+                                <div class="product-rating">
+                                    <span class="star">★</span>
+                                    <span class="rating">{{ $product->rating }}</span>
+                                    <span class="sold">| {{ $product->sold }} Terjual</span>
+                                </div>
+                                <p class="product-name">{{ $product->name }}</p>
+                                <div class="product-price">
+                                    <span class="current-price">Rp.{{ number_format($product->price, 0, ',', '.') }}</span>
+                                </div>
+                                <a href="{{ route('product.detail', ['id' => $product->id]) }}" class="btn-more">Detail Produk</a>
+                            </div>
+                        </div>
+                        @endforeach
+                        {{-- <div class="product-card">
                             <div class="product-image">
                                 <img src="img/batik1.png" alt="Batik Sogan Blus Salur Wanita">
                             </div>
@@ -248,7 +267,7 @@
                                     <span class="current-price">Rp.490.000</span>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="pagination-container">

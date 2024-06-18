@@ -21,65 +21,52 @@
     <div class="cart-container">
         <div class="cart-header">
             <h2>Keranjang Belanja</h2>
-            <a class="delete-all" onclick="hapusSemua()">Hapus Semua</a>
+            <a class="delete-all" href="{{ route('cart.clear') }}" onclick="event.preventDefault();
+                if(confirm('Anda yakin ingin menghapus semua item dari keranjang?'))
+                    document.getElementById('cart-clear-form').submit();">Hapus Semua</a>
+            <form id="cart-clear-form" action="{{ route('cart.clear') }}" method="POST" style="display: none;">
+                @csrf
+                @method('DELETE')
+            </form>
         </div>
+        @foreach ($userCart as $cartItem)
         <div class="cart-item">
             <div class="cart-item-checkbox">
-                <input type="checkbox" id="custom-checkbox" class="checkbox-custom" checked>
-                <label for="custom-checkbox"></label>
+                <input type="checkbox" id="custom-checkbox-{{ $cartItem->id }}" class="checkbox-custom" checked>
+                <label for="custom-checkbox-{{ $cartItem->id }}"></label>
             </div>
-            <img src="{{ asset('img/baju1.jpg') }}" alt="Batik Sogan Lawean Blus Salur Wanita">
+            <img src="{{ asset('img/' . $cartItem->product->image) }}" alt="{{ $cartItem->product->name }}">
             <div class="cart-item-info">
-                <p>BSB101_Batik Sogan Lawean Blus Salur Wanita</p>
-                <p>Ukuran: Medium (M)</p>
+                <p>{{ $cartItem->product->name }}</p>
+                <p>Ukuran: {{ $cartItem->product->ukuran }}</p>
             </div>
             <div class="cart-item-price">
-                <p style="margin-left: 15px;">Rp.490.000</p>
-                <p style="text-decoration: line-through; margin-left: 10px;">Rp.980.000</p>
-                <p style="color: #a0522d; margin-left: 10px;">50%</p>
+                <p style="margin-left: 15px;">Rp.{{ number_format($cartItem->product->price, 0, ',', '.') }}</p>
+                @if ($cartItem->product->discount_price)
+                <p style="text-decoration: line-through; margin-left: 10px;">Rp.{{ number_format($cartItem->product->original_price, 0, ',', '.') }}</p>
+                <p style="color: #a0522d; margin-left: 10px;">{{ $cartItem->product->discount }}%</p>
+                @endif
             </div>
             <div class="cart-item-controls">
                 <div class="quantity-box">
-                    <button onclick="kurangiJumlah()">-</button>
-                    <input type="number" value="2" min="1" max="10">
-                    <button onclick="tambahJumlah()">+</button>
+                    <button onclick="kurangiJumlah({{ $cartItem->id }})">-</button>
+                    <input type="number" value="{{ $cartItem->quantity }}" min="1" max="10">
+                    <button onclick="tambahJumlah({{ $cartItem->id }})">+</button>
                 </div>
             </div>
-
-            {{-- <button onclick="hapusItem()" style="color: red; background: none; border: none; cursor: pointer;">🗑</button> --}}
-            <button onclick="hapusItem()" class="delete-button" style="color: red; background: none; border: none; cursor: pointer;">🗑</button>
-
+            <form action="{{ route('removeFromCart', ['id' => $cartItem->id]) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="delete-button" onclick="return confirm('Anda yakin ingin menghapus produk ini dari keranjang?')">🗑</button>
+            </form>
         </div>
-        <!-- Repeat for other items -->
-        <div class="cart-item">
-            <div class="cart-item-checkbox">
-                <input type="checkbox" id="pp" class="checkbox-custom">
-                <label for="pp"></label>
-            </div>
-            <img src="{{ asset('img/baju2.jpg') }}" alt="Batik Rok Payung Wanita">
-            <div class="cart-item-info">
-                <p>RPYB103_Batik Rok Payung Wanita</p>
-                <p>Ukuran: Medium (M)</p>
-            </div>
-            <div class="cart-item-price">
-                <p style="margin-left: 15px;">Rp.225.000</p>
-                <p style="text-decoration: line-through; margin-left: 10px;">Rp.980.000</p>
-                <p style="color: #a0522d; margin-left: 10px;">50%</p>
-            </div>
-            <div class="cart-item-controls">
-                <div class="quantity-box">
-                    <button onclick="kurangiJumlah()">-</button>
-                    <input type="number" value="2" min="1" max="10">
-                    <button onclick="tambahJumlah()">+</button>
-                </div>
-            </div>
-
-            <button onclick="hapusItem()" style="color: red; background: none; border: none; cursor: pointer;">🗑</button>
-        </div>
+        @endforeach
         <!-- Repeat for other items -->
         <div class="cart-footer">
-            <p>Total (1 Produk): Rp.490.000</p>
-            <button>Lanjut ke Pembayaran</button>
+            <p>Total ({{ $userCart->count() }} Produk): Rp.{{ number_format($userCart->sum(function ($cartItem) { return $cartItem->product->price * $cartItem->quantity; }), 0, ',', '.') }}</p>
+            <a href="{{ route('pembayaran') }}">
+                <button>Lanjut ke Pembayaran</button>
+            </a>
         </div>
     </div>
 

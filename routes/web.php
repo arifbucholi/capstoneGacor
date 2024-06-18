@@ -1,13 +1,34 @@
 <?php
 
-use App\Http\Controllers\Auth\SocialiteController;
-use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\Auth\SocialiteController;
 
-Route::get('/', function () {
-    return view('landingPage');
-});
+Route::get('/', [HomeController::class, 'index'])->name('landingPage');
+
+//produk
+Route::get('/produk', [ProductController::class, 'productPage']);
+Route::get('/product/{id}', [ProductController::class, 'detailProdukPage'])->name('product.detail');
+
+// Route::post('/cart/add/{product}', [CartController::class, 'addToCart'])->name('cart.add');
+Route::get('/cart', [CartController::class, 'cartPage'])->name('cartPage');
+
+Route::post('/cartPage', [CartController::class, 'addToCart'])->name('addToCart');
+Route::delete('/cart/remove/{id}', [CartController::class, 'removeFromCart'])->name('removeFromCart');
+Route::delete('/cart/clear', [CartController::class, 'clearCart'])->name('cart.clear');
+
+Route::get('/pembayaran', [OrderController::class, 'checkoutPage'])->name('pembayaran');
+
+
+
+    // Route::post('/cart/{productId}', [CartController::class, 'addToCart'])->name('cart.add');
+    // Route::delete('/cart/{id}', [CartController::class, 'removeFromCart'])->name('cart.remove');
+    // Route::put('/cart/{id}', [CartController::class, 'updateQuantity'])->name('cart.update');
+
 
 Route::get('/profile', function () {
     return view('profile.index', [
@@ -39,25 +60,25 @@ Route::get('/galeri', function () {
     ]);
 });
 
-Route::get('/pembayaran', function () {
-    return view('checkoutPage', [
-        "title" => "Pembayaran"
-    ]);
-});
+// Route::get('/pembayaran', function () {
+//     return view('checkoutPage', [
+//         "title" => "Pembayaran"
+//     ]);
+// });
 
-Route::get('/detail-produk', function () {
-    return view('produk.detail', [
-        "title" => "Detail Produk"
-    ]);
-});
+// Route::get('/detail-produk', function () {
+//     return view('detailProdukPage', [
+//         "title" => "Detail Produk"
+//     ]);
+// });
 
-Route::get('/produk', function () {
-    return view('productPage');
-});
+// Route::get('/produk', function () {
+//     return view('productPage');
+// });
 
-Route::get('/cart', function () {
-    return view('cartPage');
-});
+// Route::get('/cart', function () {
+//     return view('cartPage');
+// });
 
 Route::get('/laravel', function () {
     return view('welcome');
