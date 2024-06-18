@@ -73,7 +73,20 @@
         <div class="container">
             <h2>Lineup Garment Product</h2>
             <div class="products-grid">
+                @foreach ($products as $product)
                 <div class="product-card">
+                    <a href="{{ route('product.detail', ['id' => $product->id]) }}" style="text-decoration: none; color: inherit;">
+                        <img src="{{ asset('img/' . $product->image) }}" alt="{{ $product->name }}">
+                        <div class="product-info">
+                            <h3>{{ $product->name }}</h3>
+                            <p>Rating: {{ $product->rating }}</p>
+                            <p>Terjual: {{ $product->sold }}</p>
+                            <p>Rp.{{ number_format($product->price, 0, ',', '.') }}</p>
+                        </div>
+                    </a>
+                </div>
+                @endforeach
+                {{-- <div class="product-card">
                     <img src="{{ asset('img/baju1.jpg') }}" alt="Product 1">
                     <div class="product-info">
                         <h3>Batik Batikan</h3>
@@ -108,7 +121,7 @@
                         <p>Terjual: 45</p>
                         <p>Rp.95.999</p>
                     </div>
-                </div>
+                </div> --}}
             </div>
             <a href="/product" class="btn-more">More</a>
         </div>

@@ -8,26 +8,22 @@
     @php
         $menu = 'checkout';
     @endphp
-    @include('partials.navbar')
+    @include('partials.navbar2')
 
-    <form action="#" method="POST">
-        @csrf
-        <section class="checkout-container">
-            <div class="left-section">
-                <h1>Checkout</h1>
+    <section class="checkout-container">
+        <div class="left-section">
+            <h1>Checkout</h1>
 
-                <div class="form-group">
-                    <h5>Data Pembeli</h5>
-                    <div class="input-row">
-                        <input type="text" id="first-name" name="first-name" placeholder="Nama Depan"
-                            aria-label="Nama Depan">
-                        <input type="text" id="last-name" name="last-name" placeholder="Nama Belakang"
-                            aria-label="Nama Belakang">
-                    </div>
-                    <div class="input-row">
-                        <input type="text" id="phone" name="phone" placeholder="Nomor Telepon" class="half-width"
-                            aria-label="Nomor Telepon">
-                    </div>
+            <div class="form-group">
+                <h5>Data Pembeli</h5>
+                <div class="input-row">
+                    <input type="text" id="name" placeholder="Nama Lengkap"
+                        aria-label="Nama Lengkap">
+                </div>
+                <div class="input-row">
+                    <input type="text" id="phone" name="phone" placeholder="Nomor Telepon" class="half-width"
+                        aria-label="Nomor Telepon">
+
                 </div>
 
                 <div class="form-group">
@@ -126,11 +122,27 @@
                     </div>
                 </div>
 
-                <h5 class="summary-title">Daftar Pembelian</h5>
-                <div class="order-summary">
-                    <div class="summary-header">
-                        <span>Produk Pembelian</span>
-                        <span>Subtotal</span>
+            <h5 class="summary-title">Daftar Pembelian</h5>
+            <div class="order-summary">
+                <div class="summary-header">
+                    <span>Produk Pembelian</span>
+                    <span>Subtotal</span>
+                </div>
+                @foreach ($userCart as $cartItem)
+                <div class="product-item">
+                    <img src="{{ asset('img/' . $cartItem->product->image) }}" alt="Product Image">
+                    <div class="product-details">
+                        <span>{{ $cartItem->product->name }}</span>
+                        <p>Ukuran: {{ $cartItem->size }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ $cartItem->quantity }} X Rp.{{ number_format($cartItem->product->price, 0, ',', '.') }}</p>
+                    </div>
+                    <div class="product-price">Rp.{{ number_format($cartItem->product->price * $cartItem->quantity, 0, ',', '.') }}</div>
+                </div>
+                @endforeach
+                {{-- <div class="product-item">
+                    <img src="img/product-checkout1.jpg" alt="Product Image">
+                    <div class="product-details">
+                        <span>BSB101_Batik Sogan Laweyan</span>
+                        <p>Ukuran - XL &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2 X 490.000</p>
                     </div>
                     <div class="product-item">
                         <img src="img/product-checkout1.jpg" alt="Product Image">
@@ -164,7 +176,19 @@
                     <div class="total-payment">
                         <p><span>Total Pembayaran:</span><span class="harga">Rp 1.000.000</span></p>
                     </div>
+                    <div class="product-price">Rp 36.000</div>
+                </div> --}}
+                <div class="price-details">
+                    <p><span>Subtotal</span><span class="harga">Rp {{ number_format($subtotal, 0, ',', '.') }}</span></p>
+                    <p><span>Shipping Cost (+)</span><span class="harga">Rp {{ number_format($shippingCost, 0, ',', '.') }}</span></p>
+                    <p><span>Discount (-)</span><span class="harga">Rp {{ number_format($discount, 0, ',', '.') }}</span></p>
                 </div>
+                <div class="total-payment">
+                    <p><span>Total Pembayaran:</span><span class="harga">Rp {{ number_format($totalPayment, 0, ',', '.') }}</span></p>
+                </div>
+
+            </div>
+
 
                 <div class="payment-method">
                     <h3>Pembayaran</h3>

@@ -22,56 +22,45 @@
             <div class="bg-main-img">
                 <img src="{{ asset('img/detailproduk.png') }}" alt="Main Product Image" class="main-image">
             </div>
-            <div class="thumbnail-images">
-                <div class="bg-img-product">
-                    <img src="{{ asset('img/detailproduk.png') }}" alt="Product Thumbnail">
-                </div>
-                <div class="bg-img-product">
-                    <img src="{{ asset('img/detailproduk.png') }}" alt="Product Thumbnail">
-                </div>
-                <div class="bg-img-product">
-                    <img src="{{ asset('img/detailproduk.png') }}" alt="Product Thumbnail">
-                </div>
-            </div>
         </div>
         <div class="product-details">
-            <h1>BSB101_Batik Sogan Laweyan Blus Salur Wanita</h1>
+            <h1>{{ $product->name }}</h1>
             <div class="rating">
-                <span>⭐ 4.8</span><span> | </span>
-                <span>77 Penilaian</span><span> | </span>
-                <span>124 Terjual</span>
+                <span class="star">★</span>
+                <span class="rating-value">{{ $product->rating }}</span>
+                <span class="reviews">| 77 Penilaian | {{ $product->sold }} Terjual</span>
             </div>
             <div class="price">
-                <span class="current-price"><span class="rp">Rp.</span><span class="nominal">490.000</span></span>
-                <span class="original-price">Rp. 980.000</span>
+                <span class="current-price"><span class="rp">Rp </span><span class="nominal">{{ number_format($product->price, 0, ',', '.') }}</span></span>
+                <span class="original-price">Rp{{ number_format($product->original_price, 0, ',', '.') }}</span>
                 <span class="discount">50%</span>
             </div>
-            <p class="description">Lorem ipsum dolor sit amet consectetur. Ultrices platea tristique montes blandit. Amet
-                mattis orci malesuada faucibus nisl vestibulum hac. Netus commodo gravida odio vitae nunc scelerisque sed
-                nec dui. Nunc</p>
+            <p class="description">{{ $product->description }}</p>
+
             <h1>Detail Produk</h1>
             <div class="detail-product">
                 <div class="detail-item">
                     <span class="left">Material</span>
-                    <span class="right">Katun Laweyan</span>
+                    <span class="right">{{ $product->material }}</span>
                 </div>
                 <hr class="detail-hr">
                 <div class="detail-item">
                     <span class="left">Jenis Pakaian</span>
-                    <span class="right">Wanita</span>
+                    <span class="right">{{ $product->jenis_pakaian }}</span>
                 </div>
                 <hr class="detail-hr">
                 <div class="detail-item">
                     <span class="left">Nama Brand</span>
-                    <span class="right">Marin Laweyan</span>
+                    <span class="right">{{ $product->nama_brand }}</span>
                 </div>
                 <hr class="detail-hr">
                 <div class="detail-item">
                     <span class="left">Code Brand</span>
-                    <span class="right">BSB101</span>
+                    <span class="right">{{ $product->code_brand }}</span>
                 </div>
             </div>
-            <form action="#" method="POST">
+            <form action="{{ route('addToCart') }}" method="POST" id="myForm">
+
                 @csrf
                 <div class="size-selection">
                     <div class="title">
@@ -103,16 +92,18 @@
                     <h1>Kuantitas</h1>
                     <div class="quantity">
                         <div class="box-quantity">
+                            <input type="hidden" name="product_id" value="{{ $product->id }}">
                             <button type="button" class="decrease"><i class="bi bi-dash"></i></button>
                             <input type="number" name="quantity" value="1" min="1" max="30">
                             <button type="button" class="increase"><i class="bi bi-plus"></i></button>
                         </div>
-                        <span>Stock : <b>30</b> tersisa</span>
+                        <span>Stock : <b>{{ $product->stock }}</b> tersisa</span>
                     </div>
                 </div>
                 <div class="action-buttons">
                     <button class="buy-now" type="submit">Beli Sekarang</button>
-                    <button class="add-to-cart">Masukkan Keranjang</button>
+                    <button class="add-to-cart" type="submit">Masukkan Keranjang</button>
+
                 </div>
             </form>
         </div>
@@ -219,14 +210,11 @@
 
 @section('js')
     <script>
-        document.querySelectorAll('.sizes input[type="radio"]').forEach((radio) => {
-            radio.addEventListener('change', function() {
-                document.querySelectorAll('.sizes label').forEach((label) => {
-                    label.classList.remove('selected');
-                });
-                this.nextElementSibling.classList.add('selected');
-            });
-        });
+        function submitForm() {
+            var selectedSize = document.querySelector('input[name="size"]:checked').value;
+            document.getElementById('selectedSize').value = selectedSize;
+            document.getElementById('myForm').submit();
+        }
     </script>
 
     <script>
