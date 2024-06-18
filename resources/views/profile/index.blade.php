@@ -1,22 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.main')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil Saya</title>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/customNav.css') }}">
+@section('css')
     <link rel="stylesheet" href="{{ asset('css/customProfile.css') }}">
-    <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
-</head>
+@endsection
 
-<body>
+@section('main')
     @php
         $menu = 'profile';
     @endphp
-    @include('partials.navbar2')
+    @include('partials.navbar')
 
     <section class="profile-container">
         <div class="sidebar">
@@ -39,7 +31,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstr
         </div>
 
         <div class="content">
-            <form>
+            <form method="POST" action="">
+                @csrf
                 <div class="section">
                     <h4>Informasi Pribadi</h4>
                     <div class="input-row">
@@ -116,37 +109,42 @@ href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstr
         </div>
 
         <div class="profile-picture-section">
-            <div class="profile-picture-wrapper">
-                <img src="img/profile.jpg" alt="Profile Picture" class="profile-picture">
-                <button class="edit-button" id="profileImage" title="Edit Profile Picture"><i class="bi bi-pencil-square"></i></button>
-            </div>
-            <p>Ukuran gambar maks. 1 MB (JPEG, PNG)</p>
+            <form action="" method="POST">
+                <div class="profile-picture-wrapper">
+                    <img src="img/profile.jpg" alt="Profile Picture" class="profile-picture">
+                    <button class="edit-button" type="button" id="profileImage" title="Edit Profile Picture">
+                        <i class="bi bi-pencil-square"></i>
+                    </button>
+                    <input type="file" id="fileInput" accept="image/jpeg, image/png" style="display: none;">
+                </div>
+                <p>Ukuran gambar maks. 1 MB (JPEG, PNG)</p>
+            </form>
+
         </div>
     </section>
+@endsection
 
-
-    {{-- Footer --}}
-    @include('partials.footer')
-
+@section('js')
     <script>
-        function loadFile(event) {
-            const output = document.getElementById('profileImage');
-            output.src = URL.createObjectURL(event.target.files[0]);
-            output.onload = function() {
-                URL.revokeObjectURL(output.src) // free memory
-            }
-        }
-    </script>
-    <script>
-        window.addEventListener('scroll', function() {
-            var navbar = document.getElementById('navbar');
-            if (window.scrollY > 0) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+        document.addEventListener('DOMContentLoaded', function() {
+            const profileImageButton = document.getElementById('profileImage');
+            const fileInput = document.getElementById('fileInput');
+
+            profileImageButton.addEventListener('click', function() {
+                fileInput.click();
+            });
+
+            fileInput.addEventListener('change', function(event) {
+                const file = event.target.files[0];
+                if (file) {
+                    // Tampilkan preview gambar yang dipilih (opsional)
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        document.querySelector('.profile-picture').src = e.target.result;
+                    }
+                    reader.readAsDataURL(file);
+                }
+            });
         });
     </script>
-</body>
-
-</html>
+@endsection
