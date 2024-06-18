@@ -9,14 +9,33 @@
 }
 
 #navbar .nav-links a {
+    color: #637381;
+}
+
+#navbar .nav-links li.active a {
     color: #985A33;
+}
+
+#navbar .cart-logo {
+    font-size: large;
+    margin-left: 15px;
+    color: #985A33;
+}
+
+#navbar.scrolled .cart-logo {
+    color: #fff;
 }
 
 #navbar .nav-links a:hover {
     color: #985A33;
+    text-decoration: none;
 }
 
 #navbar.scrolled .nav-links a {
+    color: #fff;
+}
+
+#navbar.scrolled .nav-links  li.active a {
     color: #fff;
 }
 

@@ -1,180 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout</title>
+    <title>Artikel</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/customLanding.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/customNav.css') }}">
     <link rel="stylesheet" href="{{ asset('css/customCheckout.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
 </head>
+
 <body>
     <!-- Navigation -->
-    <nav id="navbar" class="navbar">
-        <div class="container">
-            <div class="navbar-left">
-                <a href="#" class="logo"><img src="img/logo.png" alt="Logo"></a>
-                <ul class="nav-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="/product">Product</a></li>
-                    <li><a href="#">Article</a></li>
-                </ul>
-            </div>
-            <div class="navbar-right">
-                <form class="search-form">
-                    <input type="text" placeholder="Search">
-                </form>
-                <ul class="nav-links">
-                    <li><a href="/login">Login</a></li>
-                    <li><a href="#">Cart</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    @php
+        $menu = 'checkout';
+    @endphp
+    @include('partials.navbar2')
 
-    <!-- Checkout Section -->
-    <section class="checkout">
-        <div class="container">
+    <section class="checkout-container">
+        <div class="left-section">
             <h1>Checkout</h1>
-            <div class="checkout-content">
-                <div class="checkout-left">
-                    <div class="form-group">
-                        <label for="first-name">Nama Depan</label>
-                        <input type="text" id="first-name" placeholder="Nama Depan">
-                    </div>
-                    <div class="form-group">
-                        <label for="last-name">Nama Belakang</label>
-                        <input type="text" id="last-name" placeholder="Nama Belakang">
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Nomor Telepon</label>
-                        <input type="text" id="phone" placeholder="Nomor Telepon">
-                    </div>
-                    <div class="form-group">
-                        <label for="province">Pilih Provinsi</label>
-                        <select id="province">
-                            <option>Pilih Provinsi</option>
-                            <!-- Add options here -->
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="city">Pilih Kab/Kota</label>
-                        <select id="city">
-                            <option>Pilih Kab/Kota</option>
-                            <!-- Add options here -->
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="district">Nama Kecamatan</label>
-                        <input type="text" id="district" placeholder="Nama Kecamatan">
-                    </div>
-                    <div class="form-group">
-                        <label for="postcode">Kodepos</label>
-                        <input type="text" id="postcode" placeholder="Kodepos">
-                    </div>
-                    <div class="form-group">
-                        <label for="address">Tuliskan alamat lengkap pengiriman</label>
-                        <textarea id="address" rows="3"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <input type="checkbox" id="same-address">
-                        <label for="same-address">Samakan dengan alamat profile</label>
-                    </div>
-                    <div class="form-group">
-                        <label for="shipping">Opsi Pengiriman</label>
-                        <select id="shipping">
-                            <option>Instan 3 Jam</option>
-                            <option>Regular</option>
-                            <option>Ekonomi</option>
-                        </select>
-                    </div>
+
+            <div class="form-group">
+                <h5>Data Pembeli</h5>
+                <div class="input-row">
+                    <input type="text" id="first-name" name="first-name" placeholder="Nama Depan"
+                        aria-label="Nama Depan">
+                    <input type="text" id="last-name" name="last-name" placeholder="Nama Belakang"
+                        aria-label="Nama Belakang">
                 </div>
-                <div class="checkout-right">
-                    <h3>Tambahkan Kupon Diskon</h3>
-                    <input type="text" placeholder="Coupon code">
-                    <button> Terapkan </button>
-                    <div class="order-summary">
-                        <h3>Daftar Pembelian</h3>
-                        <ul>
-                            <li>BSB101_Batik Sogan Laweyan Blus Salur Wanita (x2) - Rp.980.000</li>
-                            <li>RPYB103_Batik Rok Payung Wanita (x1) - Rp.225.000</li>
-                            <li>BSB101_Batik Sogan Laweyan Blus Salur Wanita (x1) - Rp.225.000</li>
-                        </ul>
-                        <div class="summary">
-                            <p>Subtotal: Rp.1.430.000</p>
-                            <p>Shipping Cost: Rp.10.000</p>
-                            <p>Discount: Rp.0</p>
-                            <p>Total: Rp.1.440.000</p>
+                <div class="input-row">
+                    <input type="text" id="phone" name="phone" placeholder="Nomor Telepon" class="half-width"
+                        aria-label="Nomor Telepon">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <h5>Informasi Pengiriman</h5>
+                <div class="input-row">
+                    <input type="text" id="province" name="province" placeholder="Pilih Provinsi"
+                        aria-label="Provinsi">
+                    <input type="text" id="city" name="city" placeholder="Pilih Kabupaten/Kota"
+                        aria-label="Kabupaten/Kota">
+                </div>
+                <div class="input-row">
+                    <input type="text" id="district" name="district" placeholder="Nama Kecamatan"
+                        aria-label="Kecamatan">
+                    <input type="text" id="postal-code" name="postal-code" placeholder="Kodepos"
+                        aria-label="Kodepos">
+                </div>
+                <textarea id="address" name="address" placeholder="Tuliskan alamat lengkap pengiriman" rows="4"
+                    aria-label="Alamat Pengiriman"></textarea>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="save-profile" name="save-profile" class="checkbox-custom">
+                    <label for="save-profile"></label>
+                    <span>Samakan dengan alamat profil</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <h5>Opsi Pengiriman</h5>
+                <div class="input-row">
+                    <div class="custom-select">
+                        <input type="hidden" name="pengiriman1" id="pengiriman1" value="Reguler">
+                        <div class="selected-option">Reguler</div>
+                        <div class="options-container">
+                            <div class="option disabled">
+                                <span>Instan 3 Jam</span>
+                                <small style="color: red;">Jarak pengiriman melebihi batas maks
+                                    40 km</small>
+                            </div>
+                            <div class="option">
+                                <span>Reguler</span>
+                                <small>Estimasi tiba 3 - 6 Juli 2023</small>
+                            </div>
+                            <div class="option">
+                                <span>Ekonomi</span>
+                                <small>Estimasi tiba 4 - 6 Juli 2023</small>
+                            </div>
                         </div>
                     </div>
-                    <h3>Pembayaran</h3>
-                    <div class="payment-methods">
-                        <label><input type="radio" name="payment" value="bank"> Virtual Account Bank</label>
-                        <label><input type="radio" name="payment" value="gopay"> GoPay</label>
-                        <label><input type="radio" name="payment" value="linkaja"> LinkAja</label>
-                        <label><input type="radio" name="payment" value="shopeepay"> ShopeePay</label>
+                    <div class="custom-select">
+                        <input type="hidden" name="pengiriman2" id="pengiriman2" value="Ekspedisi AAA">
+                        <div class="selected-option">Ekspedisi AAA</div>
+                        <div class="options-container">
+                            <div class="option">
+                                <div class="option-left">
+                                    <span>Ekspedisi AAA</span>
+                                    <small>Estimasi tiba 3 - 6 Juli 2023</small>
+                                </div>
+                                <div class="option-right">
+                                    <h5>Rp 23.000</h5>
+                                </div>
+                            </div>
+                            <div class="option">
+                                <div class="option-left">
+                                    <span>Ekspedisi BBB</span>
+                                    <small>Estimasi tiba 4 - 6 Juli 2023</small>
+                                </div>
+                                <div class="option-right">
+                                    <h5>Rp 25.000</h5>
+                                </div>
+                            </div>
+                            <div class="option">
+                                <div class="option-left">
+                                    <span>Ekspedisi CCC</span>
+                                    <small>Estimasi tiba 3 - 6 Juli 223</small>
+                                </div>
+                                <div class="option-right">
+                                    <h5>Rp 27.000</h5>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <button>Buat Pesanan</button>
-                    <p>Dengan melanjutkan, kamu menyetujui Syarat & Ketentuan berlaku</p>
                 </div>
             </div>
+        </div>
+
+        <div class="right-section">
+            <div class="coupon-group">
+                <h5>Tambahkan Kupon Diskon</h5>
+                <div class="coupon-group-more">
+                    <input type="text" placeholder="Masukkan kode kupon" aria-label="Kode Kupon">
+                    <button>Terapkan</button>
+                </div>
+            </div>
+
+            <h5 class="summary-title">Daftar Pembelian</h5>
+            <div class="order-summary">
+                <div class="summary-header">
+                    <span>Produk Pembelian</span>
+                    <span>Subtotal</span>
+                </div>
+                <div class="product-item">
+                    <img src="img/product-checkout1.jpg" alt="Product Image">
+                    <div class="product-details">
+                        <span>BSB101_Batik Sogan Laweyan</span>
+                        <p>Ukuran - XL &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2 X 490.000</p>
+                    </div>
+                    <div class="product-price">Rp 980.000</div>
+                </div>
+                <div class="product-item">
+                    <img src="img/product-checkout2.jpg" alt="Product Image">
+                    <div class="product-details">
+                        <span>RPYB103_Batik Rok Payung</span>
+                        <p>Ukuran - XL &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 X 225.000</p>
+                    </div>
+                    <div class="product-price">Rp 225.000</div>
+                </div>
+                <div class="product-item">
+                    <img src="img/product-checkout3.jpg" alt="Product Image">
+                    <div class="product-details">
+                        <span>BSB101_Batik Sogan Laweyan</span>
+                        <p>Ukuran - XL &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 X 36.000</p>
+                    </div>
+                    <div class="product-price">Rp 36.000</div>
+                </div>
+                <div class="price-details">
+                    <p><span>Subtotal</span><span class="harga">Rp 1.241.000</span></p>
+                    <p><span>Shipping Cost (+)</span><span class="harga">Rp 241.000</span></p>
+                    <p><span>Discount (-)</span><span class="harga">Rp 1.000.000</span></p>
+                </div>
+                <div class="total-payment">
+                    <p><span>Total Pembayaran:</span><span class="harga">Rp 1.000.000</span></p>
+                </div>
+            </div>
+
+            <div class="payment-method">
+                <h3>Pembayaran</h3>
+                <div class="radio-group">
+                    <input type="radio" id="bank" name="payment" value="bank" checked>
+                    <label for="bank">Virtual Account Bank</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="gopay" name="payment" value="gopay">
+                    <label for="gopay">GoPay</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="linkaja" name="payment" value="linkaja">
+                    <label for="linkaja">LinkAja</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="shopeepay" name="payment" value="shopeepay">
+                    <label for="shopeepay">ShopeePay</label>
+                </div>
+            </div>
+
+            <button class="create">Buat Pesanan</button>
+            <p class="nb">Dengan melakukan pemesanan, kamu menyetujui <span>Syarat & Ketentuan</span> berlaku.</p>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container footer-top">
-            <div class="footer-column footer-contact">
-                <h3>Batik Wonderland Laweyan</h3>
-                <p>Lorem ipsum dolor sit amet consectetur. diam pellentesque feugiat accumsan lorem mauris. Vestibulum rhoncus</p>
-            </div>
-            <div class="footer-column">
-                <h3>Produk</h3>
-                <ul>
-                    <li><a href="#">Batik Wanita</a></li>
-                    <li><a href="#">Batik Pria</a></li>
-                    <li><a href="#">Batik Anak-anak</a></li>
-                    <li><a href="#">Batik Keluarga</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Bantuan</h3>
-                <ul>
-                    <li><a href="#">Syarat dan Ketentuan</a></li>
-                    <li><a href="#">Pertanyaan (FAQ)</a></li>
-                    <li><a href="#">Cara Belanja</a></li>
-                    <li><a href="#">Customer Service</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Mitra Kami</h3>
-                <div class="mitra-logos">
-                    <img src="img/mitra1.png" alt="Mitra 1">
-                    <img src="img/mitra2.png" alt="Mitra 2">
-                    <img src="img/mitra3.png" alt="Mitra 3">
-                    <img src="img/mitra4.png" alt="Mitra 4">
-                    <img src="img/mitra5.png" alt="Mitra 5">
-                </div>
-            </div>
-            <div class="footer-column footer-contact">
-                <h3>Layanan Kontak Kami</h3>
-                <p>+62 859 8989 999</p>
-                <p>Senin - Jumat: 9:00 - 20:00</p>
-                <p>Sabtu: 11:00 - 15:00</p>
-                <div class="footer-social">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="container footer-bottom">
-            <p>&copy; 2024 Batik Wonderland Laweyan. All Rights Reserved.</p>
-        </div>
-    </footer>
-
+    {{-- Footer --}}
+    @include('partials.footer')
     <script src="{{ asset('js/main.js') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            function setupCustomSelect(selectContainer, hiddenInput) {
+                const selectedOption = selectContainer.querySelector('.selected-option');
+                const optionsContainer = selectContainer.querySelector('.options-container');
+                const optionsList = selectContainer.querySelectorAll('.option');
+
+                selectedOption.addEventListener('click', () => {
+                    selectContainer.classList.toggle('active');
+                    optionsContainer.classList.toggle('active');
+                });
+
+                optionsList.forEach(o => {
+                    if (!o.classList.contains('disabled')) {
+                        o.addEventListener('click', () => {
+                            const optionText = o.querySelector('.option-left span').textContent;
+                            selectedOption.textContent = optionText;
+                            hiddenInput.value = optionText;
+                            selectContainer.classList.remove('active');
+                            optionsContainer.classList.remove('active');
+                        });
+                    }
+                });
+
+                document.addEventListener('click', function(event) {
+                    if (!event.target.closest('.custom-select')) {
+                        selectContainer.classList.remove('active');
+                        optionsContainer.classList.remove('active');
+                    }
+                });
+            }
+
+            setupCustomSelect(document.querySelector('.custom-select:nth-of-type(1)'), document.querySelector(
+                '#pengiriman1'));
+            setupCustomSelect(document.querySelector('.custom-select:nth-of-type(2)'), document.querySelector(
+                '#pengiriman2'));
+        });
+    </script>
+
+
 </body>
+
 </html>
