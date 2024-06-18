@@ -1,15 +1,14 @@
-<!-- Navigation -->
 <nav id="navbar" class="navbar">
     <div class="container">
-        <a href="/" class="logo"><img src="img/logo.png" alt="Logo"></a>
+        <a href="/" class="logo"><img src="img/logo2.png" alt="Logo"></a>
         <div class="navbar-left">
             <ul class="nav-links">
-                <li><a href="/">Beranda</a></li>
-                <li><a href="/produk">Produk</a></li>
-                <li><a href="/artikel">Artikel</a></li>
-                <li><a href="/galeri">Galeri</a></li>
-                <li><a href="/#faq">Faq</a></li>
-                <li><a href="#">Kontak</a></li>
+                <li class="@php if($menu == 'beranda') echo 'active'; @endphp"><a href="/">Beranda</a></li>
+                <li class="@php if($menu == "produk") echo 'active'; @endphp"><a href="/produk">Produk</a></li>
+                <li class="@php if($menu == "artikel") echo 'active'; @endphp"><a href="/artikel">Artikel</a></li>
+                <li class="@php if($menu == "galeri") echo 'active'; @endphp"><a href="/galeri">Galeri</a></li>
+                <li class="@php if($menu == "faq") echo 'active'; @endphp"><a href="/#faq">Faq</a></li>
+                <li class="@php if($menu == "kontak") echo 'active'; @endphp"><a href="#">Kontak</a></li>
             </ul>
         </div>
         <div class="navbar-right">

@@ -1,23 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail Artikel</title>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/customNav.css') }}">
+@extends('layouts.main')
+@section('css')
     <link rel="stylesheet" href="{{ asset('css/customGaleri.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
-</head>
+@endsection
 
-<body>
-    <!-- Navigation -->
+@section('main')
+    <!-- Navbar -->
     @php
         $menu = 'galeri';
     @endphp
-    @include('partials.navbar2')
+    @include('partials.navbar')
 
     <main>
         <div class="carousel">
@@ -86,7 +77,9 @@
                 <img src="img/batik-process.jpg" alt="Proses Pembuatan Kain Batik Laweyan">
                 <div class="text-overlay">
                     <h3>Proses Pembuatan Kain Batik Laweyan</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur. Arcu sed habitasse nibh proin sit interdum curabitur ac. Morbi cras eget duis Lorem ipsum dolor sit amet consectetur. Arcu sed habitasse nibh proin sit interdum curabitur ac. Morbi cras eget duis</p>
+                    <p>Lorem ipsum dolor sit amet consectetur. Arcu sed habitasse nibh proin sit interdum curabitur ac.
+                        Morbi cras eget duis Lorem ipsum dolor sit amet consectetur. Arcu sed habitasse nibh proin sit
+                        interdum curabitur ac. Morbi cras eget duis</p>
                 </div>
                 <div class="navigation-buttons">
                     <button class="prev">&larr;</button>
@@ -103,8 +96,8 @@
                 <img src="img/coll3.jpg" alt="Image 3">
                 <img src="img/coll4.jpg" alt="Image 4">
                 <img src="img/coll5.jpg" alt="Image 5">
-                </div>
-                <div class="row">
+            </div>
+            <div class="row">
                 <img src="img/coll6.jpg" alt="Image 6">
                 <img src="img/coll7.jpg" alt="Image 7">
                 <img src="img/coll8.jpg" alt="Image 8">
@@ -113,13 +106,9 @@
                 <img src="img/coll11.jpg" alt="Image 11">
             </div>
         </section>
-
-
     </main>
-
-    {{-- Footer --}}
-    @include('partials.footer')
-    <script src="{{ asset('js/main.js') }}"></script>
+@endsection
+@section('js')
     <script>
         let currentIndex = 0;
 
@@ -145,6 +134,4 @@
         // Initialize the carousel to show the first slide
         showSlide(currentIndex);
     </script>
-</body>
-
-</html>
+@endsection

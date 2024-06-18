@@ -17,7 +17,7 @@
     @php
         $menu = "cart";
     @endphp
-    @include('partials.navbar2')
+    @include('partials.navbar')
     <div class="cart-container">
         <div class="cart-header">
             <h2>Keranjang Belanja</h2>
