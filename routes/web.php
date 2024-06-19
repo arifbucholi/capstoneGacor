@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Auth\SocialiteController;
 
@@ -21,7 +22,11 @@ Route::post('/cartPage', [CartController::class, 'addToCart'])->name('addToCart'
 Route::delete('/cart/remove/{id}', [CartController::class, 'removeFromCart'])->name('removeFromCart');
 Route::delete('/cart/clear', [CartController::class, 'clearCart'])->name('cart.clear');
 
+// Route::get('/pembayaran', [OrderController::class, 'checkoutPage'])->name('pembayaran');
 Route::get('/pembayaran', [OrderController::class, 'checkoutPage'])->name('pembayaran');
+Route::post('/place-order', [OrderController::class, 'placeOrder'])->name('placeOrder');
+
+Route::get('/riwayatpesanan', [HistoryController::class, 'index'])->name('riwayatpesanan');
 
 
 
@@ -36,11 +41,11 @@ Route::get('/profile', function () {
     ]);
 });
 
-Route::get('/riwayatpesanan', function () {
-    return view('profile.riwayatpesanan', [
-        "title" => "Riwayat Pesanan Saya"
-    ]);
-});
+// Route::get('/riwayatpesanan', function () {
+//     return view('profile.riwayatpesanan', [
+//         "title" => "Riwayat Pesanan Saya"
+//     ]);
+// });
 
 Route::get('/artikel', function () {
     return view('articles.index', [
@@ -72,9 +77,9 @@ Route::get('/galeri', function () {
 //     ]);
 // });
 
-// Route::get('/produk', function () {
-//     return view('productPage');
-// });
+Route::get('/produk', function () {
+    return view('productPage');
+});
 
 // Route::get('/cart', function () {
 //     return view('cartPage');

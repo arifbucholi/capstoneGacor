@@ -14,113 +14,115 @@
         <div class="left-section">
             <h1>Checkout</h1>
 
-            <div class="form-group">
-                <h5>Data Pembeli</h5>
-                <div class="input-row">
-                    <input type="text" id="name" placeholder="Nama Lengkap"
-                        aria-label="Nama Lengkap">
-                </div>
-                <div class="input-row">
-                    <input type="text" id="phone" name="phone" placeholder="Nomor Telepon" class="half-width"
-                        aria-label="Nomor Telepon">
-
-                </div>
-
+            <form action="{{ route('placeOrder') }}" method="POST">
+                @csrf
                 <div class="form-group">
-                    <h5>Informasi Pengiriman</h5>
+                    <h5>Data Pembeli</h5>
                     <div class="input-row">
-                        <input type="text" id="province" name="province" placeholder="Pilih Provinsi"
-                            aria-label="Provinsi">
-                        <input type="text" id="city" name="city" placeholder="Pilih Kabupaten/Kota"
-                            aria-label="Kabupaten/Kota">
+                        <input type="text" id="name" placeholder="Nama Lengkap" aria-label="Nama Lengkap" value="{{ $user = Auth::user()->name }}">
                     </div>
                     <div class="input-row">
-                        <input type="text" id="district" name="district" placeholder="Nama Kecamatan"
-                            aria-label="Kecamatan">
-                        <input type="text" id="postal-code" name="postal-code" placeholder="Kodepos"
-                            aria-label="Kodepos">
-                    </div>
-                    <textarea id="address" name="address" placeholder="Tuliskan alamat lengkap pengiriman" rows="4"
-                        aria-label="Alamat Pengiriman"></textarea>
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="save-profile" name="save-profile" class="checkbox-custom">
-                        <label for="save-profile"></label>
-                        <span>Samakan dengan alamat profil</span>
-                    </div>
-                </div>
+                        <input type="text" id="phone" name="phone_number" placeholder="Nomor Telepon" class="half-width"
+                            aria-label="Nomor Telepon">
 
-                <div class="form-group">
-                    <h5>Opsi Pengiriman</h5>
-                    <div class="input-row">
-                        <div class="custom-select">
-                            <input type="hidden" name="pengiriman1" id="pengiriman1" value="Reguler">
-                            <div class="selected-option">Reguler</div>
-                            <div class="options-container">
-                                <div class="option disabled">
-                                    <div class="option-left">
-                                        <span>Instan 3 Jam</span>
-                                        <small style="color: red;">Jarak pengiriman melebihi batas maks 40 km</small>
+                    </div>
+
+                    <div class="form-group">
+                        <h5>Informasi Pengiriman</h5>
+                        <div class="input-row">
+                            <input type="text" id="province" name="province" placeholder="Pilih Provinsi"
+                                aria-label="Provinsi">
+                            <input type="text" id="city" name="city" placeholder="Pilih Kabupaten/Kota"
+                                aria-label="Kabupaten/Kota">
+                        </div>
+                        <div class="input-row">
+                            <input type="text" id="district" name="district" placeholder="Nama Kecamatan"
+                                aria-label="Kecamatan">
+                            <input type="text" id="postal-code" name="postal_code" placeholder="Kodepos"
+                                aria-label="Kodepos">
+                        </div>
+                        <textarea id="address" name="full_address" placeholder="Tuliskan alamat lengkap pengiriman" rows="4"
+                            aria-label="Alamat Pengiriman"></textarea>
+                        {{-- <div class="checkbox-group">
+                            <input type="checkbox" id="save-profile" name="save-profile" class="checkbox-custom">
+                            <label for="save-profile"></label>
+                            <span>Samakan dengan alamat profil</span>
+                        </div> --}}
+                    </div>
+
+                    {{-- <div class="form-group">
+                        <h5>Opsi Pengiriman</h5>
+                        <div class="input-row">
+                            <div class="custom-select">
+                                <input type="hidden" name="pengiriman1" id="pengiriman1" value="Reguler">
+                                <div class="selected-option">Reguler</div>
+                                <div class="options-container">
+                                    <div class="option disabled">
+                                        <div class="option-left">
+                                            <span>Instan 3 Jam</span>
+                                            <small style="color: red;">Jarak pengiriman melebihi batas maks 40 km</small>
+                                        </div>
+                                    </div>
+                                    <div class="option">
+                                        <div class="option-left">
+                                            <span>Reguler</span>
+                                            <small>Estimasi tiba 3 - 6 Juli 2023</small>
+                                        </div>
+                                    </div>
+                                    <div class="option">
+                                        <div class="option-left">
+                                            <span>Ekonomi</span>
+                                            <small>Estimasi tiba 4 - 6 Juli 2023</small>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="option">
-                                    <div class="option-left">
-                                        <span>Reguler</span>
-                                        <small>Estimasi tiba 3 - 6 Juli 2023</small>
+                            </div>
+                            <div class="custom-select">
+                                <input type="hidden" name="pengiriman2" id="pengiriman2" value="Ekspedisi AAA">
+                                <div class="selected-option">Ekspedisi AAA</div>
+                                <div class="options-container">
+                                    <div class="option">
+                                        <div class="option-left">
+                                            <span>Ekspedisi AAA</span>
+                                            <small>Estimasi tiba 3 - 6 Juli 2023</small>
+                                        </div>
+                                        <div class="option-right">
+                                            <h5>Rp 23.000</h5>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="option">
-                                    <div class="option-left">
-                                        <span>Ekonomi</span>
-                                        <small>Estimasi tiba 4 - 6 Juli 2023</small>
+                                    <div class="option">
+                                        <div class="option-left">
+                                            <span>Ekspedisi BBB</span>
+                                            <small>Estimasi tiba 4 - 6 Juli 2023</small>
+                                        </div>
+                                        <div class="option-right">
+                                            <h5>Rp 25.000</h5>
+                                        </div>
+                                    </div>
+                                    <div class="option">
+                                        <div class="option-left">
+                                            <span>Ekspedisi CCC</span>
+                                            <small>Estimasi tiba 3 - 6 Juli 2023</small>
+                                        </div>
+                                        <div class="option-right">
+                                            <h5>Rp 27.000</h5>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="custom-select">
-                            <input type="hidden" name="pengiriman2" id="pengiriman2" value="Ekspedisi AAA">
-                            <div class="selected-option">Ekspedisi AAA</div>
-                            <div class="options-container">
-                                <div class="option">
-                                    <div class="option-left">
-                                        <span>Ekspedisi AAA</span>
-                                        <small>Estimasi tiba 3 - 6 Juli 2023</small>
-                                    </div>
-                                    <div class="option-right">
-                                        <h5>Rp 23.000</h5>
-                                    </div>
-                                </div>
-                                <div class="option">
-                                    <div class="option-left">
-                                        <span>Ekspedisi BBB</span>
-                                        <small>Estimasi tiba 4 - 6 Juli 2023</small>
-                                    </div>
-                                    <div class="option-right">
-                                        <h5>Rp 25.000</h5>
-                                    </div>
-                                </div>
-                                <div class="option">
-                                    <div class="option-left">
-                                        <span>Ekspedisi CCC</span>
-                                        <small>Estimasi tiba 3 - 6 Juli 2023</small>
-                                    </div>
-                                    <div class="option-right">
-                                        <h5>Rp 27.000</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </div> --}}
+                </div>
+        </div>
+
+        <div class="right-section">
+            <div class="coupon-group">
+                <h5>Tambahkan Kupon Diskon</h5>
+                <div class="coupon-group-more">
+                    <input type="text" name="coupon_code" placeholder="Masukkan kode kupon" aria-label="Kode Kupon">
+                    <button>Terapkan</button>
                 </div>
             </div>
-
-            <div class="right-section">
-                <div class="coupon-group">
-                    <h5>Tambahkan Kupon Diskon</h5>
-                    <div class="coupon-group-more">
-                        <input type="text" placeholder="Masukkan kode kupon" aria-label="Kode Kupon">
-                        <button>Terapkan</button>
-                    </div>
-                </div>
 
             <h5 class="summary-title">Daftar Pembelian</h5>
             <div class="order-summary">
@@ -129,14 +131,16 @@
                     <span>Subtotal</span>
                 </div>
                 @foreach ($userCart as $cartItem)
-                <div class="product-item">
-                    <img src="{{ asset('img/' . $cartItem->product->image) }}" alt="Product Image">
-                    <div class="product-details">
-                        <span>{{ $cartItem->product->name }}</span>
-                        <p>Ukuran: {{ $cartItem->size }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ $cartItem->quantity }} X Rp.{{ number_format($cartItem->product->price, 0, ',', '.') }}</p>
+                    <div class="product-item">
+                        <img src="{{ asset('img/' . $cartItem->product->image) }}" alt="Product Image">
+                        <div class="product-details">
+                            <span>{{ $cartItem->product->name }}</span>
+                            <p>Ukuran: {{ $cartItem->size }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ $cartItem->quantity }} X
+                                Rp.{{ number_format($cartItem->product->price, 0, ',', '.') }}</p>
+                        </div>
+                        <div class="product-price">
+                            Rp.{{ number_format($cartItem->product->price * $cartItem->quantity, 0, ',', '.') }}</div>
                     </div>
-                    <div class="product-price">Rp.{{ number_format($cartItem->product->price * $cartItem->quantity, 0, ',', '.') }}</div>
-                </div>
                 @endforeach
                 {{-- <div class="product-item">
                     <img src="img/product-checkout1.jpg" alt="Product Image">
@@ -179,42 +183,46 @@
                     <div class="product-price">Rp 36.000</div>
                 </div> --}}
                 <div class="price-details">
-                    <p><span>Subtotal</span><span class="harga">Rp {{ number_format($subtotal, 0, ',', '.') }}</span></p>
-                    <p><span>Shipping Cost (+)</span><span class="harga">Rp {{ number_format($shippingCost, 0, ',', '.') }}</span></p>
-                    <p><span>Discount (-)</span><span class="harga">Rp {{ number_format($discount, 0, ',', '.') }}</span></p>
+                    <p><span>Subtotal</span><span class="harga">Rp {{ number_format($subtotal, 0, ',', '.') }}</span>
+                    </p>
+                    <p><span>Shipping Cost (+)</span><span class="harga">Rp
+                            {{ number_format($shippingCost, 0, ',', '.') }}</span></p>
+                    <p><span>Discount (-)</span><span class="harga">Rp
+                            {{ number_format($discount, 0, ',', '.') }}</span></p>
                 </div>
                 <div class="total-payment">
-                    <p><span>Total Pembayaran:</span><span class="harga">Rp {{ number_format($totalPayment, 0, ',', '.') }}</span></p>
+                    <p><span>Total Pembayaran:</span><span class="harga">Rp
+                            {{ number_format($totalPayment, 0, ',', '.') }}</span></p>
                 </div>
 
             </div>
 
 
-                <div class="payment-method">
-                    <h3>Pembayaran</h3>
-                    <div class="radio-group">
-                        <input type="radio" id="bank" name="payment" value="bank" checked>
-                        <label for="bank">Virtual Account Bank</label>
-                    </div>
-                    <div class="radio-group">
-                        <input type="radio" id="gopay" name="payment" value="gopay">
-                        <label for="gopay">GoPay</label>
-                    </div>
-                    <div class="radio-group">
-                        <input type="radio" id="linkaja" name="payment" value="linkaja">
-                        <label for="linkaja">LinkAja</label>
-                    </div>
-                    <div class="radio-group">
-                        <input type="radio" id="shopeepay" name="payment" value="shopeepay">
-                        <label for="shopeepay">ShopeePay</label>
-                    </div>
+            <div class="payment-method">
+                <h3>Pembayaran</h3>
+                <div class="radio-group">
+                    <input type="radio" id="bank" name="payment_method" value="bank" checked>
+                    <label for="bank">Virtual Account Bank</label>
                 </div>
-
-                <button class="create" type="submit">Buat Pesanan</button>
-                <p class="nb">Dengan melakukan pemesanan, kamu menyetujui <span>Syarat & Ketentuan</span> berlaku.</p>
+                <div class="radio-group">
+                    <input type="radio" id="gopay" name="payment_method" value="gopay">
+                    <label for="gopay">GoPay</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="linkaja" name="payment_method" value="linkaja">
+                    <label for="linkaja">LinkAja</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="shopeepay" name="payment_method" value="shopeepay">
+                    <label for="shopeepay">ShopeePay</label>
+                </div>
             </div>
-        </section>
-    </form>
+
+            <button class="create" type="submit">Buat Pesanan</button>
+            <p class="nb">Dengan melakukan pemesanan, kamu menyetujui <span>Syarat & Ketentuan</span> berlaku.</p>
+        </div>
+        </form>
+    </section>
 @endsection
 
 @section('js')

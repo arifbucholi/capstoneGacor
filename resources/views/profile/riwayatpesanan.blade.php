@@ -16,14 +16,14 @@
             <div class="profile-info">
                 <img src="img/profile.jpg" alt="Profile Picture" class="profile-picture">
                 <div class="user-details">
-                    <h2>Intan Kurnia</h2>
-                    <p>kintania_cimoet@gmail.com</p>
+                    <h2>{{ Auth::user()->name }}</h2>
+                    <p>{{ Auth::user()->email }}</p>
                 </div>
             </div>
             <nav class="menu-sidebar">
                 <ul>
-                    <li><a href="/profile#"><i id="icon-menu" class="bi bi-person"></i>Akun Saya</a></li>
-                    <li><a href="/riwayatpesanan#" class="active"><i id="icon-menu" class="bi bi-cart2"></i>Riwayat
+                    <li><a href="/profile"><i id="icon-menu" class="bi bi-person"></i>Akun Saya</a></li>
+                    <li><a href="/riwayatpesanan" class="active"><i id="icon-menu" class="bi bi-cart2"></i>Riwayat
                             Pesanan</a></li>
                     <li><a href="#"><i id="icon-menu" class="bi bi-archive"></i>Pembayaran</a></li>
                     <li><a href="#"><i id="icon-menu" class="bi bi-lock"></i>Ganti Kata Sandi</a></li>
@@ -34,60 +34,40 @@
         <div class="riwayat-pesanan">
             <div class="menu">
                 <div id="all" class="active">Semua</div>
-                <div id="belum-bayar">Belum Bayar</div>
+                <div id="menunggu-pembayaran">Menunggu Pembayaran</div>
                 <div id="dikirim">Dikirim</div>
                 <div id="selesai">Selesai</div>
                 <div id="dibatalkan">Dibatalkan</div>
             </div>
             <hr>
-            <div class="pesanan-item">
-                <div class="pesanan-details">
-                    <div class="bg-image">
-                        <img src="img/riwayat1.png" alt="Batik Blus" class="pesanan-image">
-                    </div>
-                    <div class="pesanan-info">
-                        <div class="pesanan-name">BSB101_Batik Sogan Laweyan Blus Salur Wanita</div>
-                        <div class="rincian-pesanan">
-                            <div class="pesanan-size">Ukuran: Medium ( M )</div>
-                            <div class="pesanan-price">1 barang x <span class="harga">Rp.490.000</span> <span
-                                    class="discount">Rp.490.000</span><span class="discount-percent">50%</span></div>
+
+            @if ($orders->isEmpty())
+                <div class="no-items">Tidak ada pesanan yang ditemukan</div>
+            @else
+                @foreach ($orders as $order)
+                    <div class="pesanan-item">
+                        <div class="pesanan-details">
+                                <div class="bg-image">
+                                    <img src="{{ asset('img/baju1.jpg') }}" alt="{{ $order->image }}" class="pesanan-image">
+                                </div>
+                                <div class="pesanan-info">
+                                    <div class="pesanan-name">Kirim ke : {{ $order->city }}</div>
+                                    <div class="rincian-pesanan">
+                                        <div class="pesanan-size">Order ID: {{ $order->id }}</div>
+                                        <div class="pesanan-price">Total Harga : <span
+                                                class="harga">Rp.{{ number_format($order->total_price, 0, ',', '.') }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{-- <div class="pesanan-info">
+                                    <div class="pesanan-name">Produk tidak ditemukan</div>
+                                </div> --}}
                         </div>
+                        <div class="pesanan-status {{ strtolower(str_replace(' ', '-', $order->status)) }}">
+                            {{ $order->status }}</div>
                     </div>
-                </div>
-                <div class="pesanan-status dikirim">Sedang dikirim</div>
-            </div>
-            <div class="pesanan-item">
-                <div class="pesanan-details">
-                    <div class="bg-image">
-                        <img src="img/riwayat2.png" alt="Batik Rok" class="pesanan-image">
-                    </div>
-                    <div class="pesanan-info">
-                        <div class="pesanan-name">RPYB103_Batik Rok Payung Wanita</div>
-                        <div class="rincian-pesanan">
-                            <div class="pesanan-size">Ukuran: Medium ( M )</div>
-                            <div class="pesanan-price">1 barang x <span class="harga">Rp.225.000</span><span
-                                    class="discount">Rp.980.000</span><span class="discount-percent">50%</span></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="pesanan-status selesai">Pesanan Selesai</div>
-            </div>
-            <div class="pesanan-item">
-                <div class="pesanan-details">
-                    <div class="bg-image">
-                        <img src="img/riwayat3.png" alt="Batik Blus" class="pesanan-image">
-                    </div>
-                    <div class="pesanan-info">
-                        <div class="pesanan-name">BSB101_Batik Sogan Laweyan Blus Salur Wanita</div>
-                        <div class="rincian-pesanan">
-                            <div class="pesanan-size">Ukuran: Medium ( M )</div>
-                            <div class="pesanan-price">1 barang x <span class="harga">Rp.490.000</span></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="pesanan-status selesai">Pesanan Selesai</div>
-            </div>
-            <div class="no-items" style="display: none;">Tidak ada pesanan yang ditemukan</div>
+                @endforeach
+            @endif
         </div>
 
     </section>

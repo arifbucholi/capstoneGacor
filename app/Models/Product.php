@@ -11,7 +11,7 @@ class Product extends Model
 
     protected $fillable = [
         'name', 'description', 'price', 'stock', 'category_id',
-        'material', 'jenis_pakaian', 'nama_brand', 'code_brand', 'ukuran'
+        'material', 'jenis_pakaian', 'nama_brand', 'code_brand', 'ukuran', 'sold', 'rating', 'image',
     ];
 
     public function category()
@@ -27,5 +27,10 @@ class Product extends Model
     public function reviews()
     {
         return $this->hasMany(Review::class);
+    }
+
+    public function orderItems()
+    {
+        return $this->hasMany(OrderItem::class);
     }
 }
