@@ -15,53 +15,70 @@ class ProductSeeder extends Seeder
     {
         $products = [
             [
-                'name' => 'Batik Batikan',
-                'description' => null, // atau isi dengan deskripsi sesuai kebutuhan
+                'name' => 'Rok Pias',
+                'description' => null,
                 'price' => 99999,
-                'stock' => null, // atau isi dengan jumlah stok
-                'category_id' => 1, // sesuaikan dengan kategori yang sudah ada di database
-                'material' => 'Material A', // atau sesuai dengan material produk
-                'jenis_pakaian' => 'Jenis A', // atau sesuai dengan jenis pakaian
-                'nama_brand' => 'Brand A', // atau sesuai dengan nama brand
-                'code_brand' => 'ABC123', // atau sesuai dengan kode brand
-                'ukuran' => 'XL', // atau sesuai dengan ukuran
-                'sold' => 50, // jumlah terjual
-                'rating' => 4, // rating produk
-                'image' => 'baju1.jpg', // nama file gambar di dalam direktori public/img/
+                'stock' => null,
+                'category_id' => 1,
+                'material' => 'Besi',
+                'jenis_pakaian' => 'Wanita',
+                'nama_brand' => 'Laweyan Lur',
+                'code_brand' => 'RPB101',
+                'ukuran' => 'XL',
+                'sold' => 50,
+                'rating' => 4,
+                'image' => 'baju1.jpg',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'name' => 'Batik Asli',
-                'description' => null, // atau isi dengan deskripsi sesuai kebutuhan
+                'name' => 'Outer Batik',
+                'description' => null,
                 'price' => 89999,
-                'stock' => null, // atau isi dengan jumlah stok
-                'category_id' => 1, // sesuaikan dengan kategori yang sudah ada di database
-                'material' => 'Material B', // atau sesuai dengan material produk
-                'jenis_pakaian' => 'Jenis B', // atau sesuai dengan jenis pakaian
-                'nama_brand' => 'Brand B', // atau sesuai dengan nama brand
-                'code_brand' => 'XYZ456', // atau sesuai dengan kode brand
-                'ukuran' => 'L', // atau sesuai dengan ukuran
-                'sold' => 30, // jumlah terjual
-                'rating' => 3, // rating produk
-                'image' => 'baju2.jpg', // nama file gambar di dalam direktori public/img/
+                'stock' => null,
+                'category_id' => 1,
+                'material' => 'Kayu',
+                'jenis_pakaian' => 'Wanita',
+                'nama_brand' => 'Laweyan Bro',
+                'code_brand' => 'OBK102',
+                'ukuran' => 'L',
+                'sold' => 30,
+                'rating' => 3,
+                'image' => 'baju2.jpg',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'name' => 'Batik Palsu',
-                'description' => null, // atau isi dengan deskripsi sesuai kebutuhan
+                'name' => 'Gamis 3D',
+                'description' => null,
                 'price' => 109999,
-                'stock' => null, // atau isi dengan jumlah stok
-                'category_id' => 2, // sesuaikan dengan kategori yang sudah ada di database
-                'material' => 'Material C', // atau sesuai dengan material produk
-                'jenis_pakaian' => 'Jenis C', // atau sesuai dengan jenis pakaian
-                'nama_brand' => 'Brand C', // atau sesuai dengan nama brand
-                'code_brand' => 'DEF789', // atau sesuai dengan kode brand
-                'ukuran' => 'M', // atau sesuai dengan ukuran
-                'sold' => 70, // jumlah terjual
-                'rating' => 5, // rating produk
-                'image' => 'baju3.jpg', // nama file gambar di dalam direktori public/img/
+                'stock' => null,
+                'category_id' => 2,
+                'material' => 'Baja',
+                'jenis_pakaian' => 'Wanita',
+                'nama_brand' => 'Laweyan Luwe',
+                'code_brand' => 'GB3D101',
+                'ukuran' => 'M',
+                'sold' => 70,
+                'rating' => 5,
+                'image' => 'baju3.jpg',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Batik Persebaya',
+                'description' => null,
+                'price' => 209999,
+                'stock' => null,
+                'category_id' => 2,
+                'material' => 'Kulit Buaya',
+                'jenis_pakaian' => 'Wanita',
+                'nama_brand' => 'Laweyan Hijau',
+                'code_brand' => 'DBL103',
+                'ukuran' => 'M',
+                'sold' => 70,
+                'rating' => 5,
+                'image' => 'baju4.jpg',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],

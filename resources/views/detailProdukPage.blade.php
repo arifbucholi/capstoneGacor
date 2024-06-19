@@ -161,7 +161,7 @@
         <div class="review-details">
             <div class="review-item">
                 <div class="reviewer-info">
-                    <img src="img/review1.png" alt="Jhon Smith">
+                    <img src="{{ asset('img/review1.png') }}" alt="Jhon Smith">
                     <div>
                         <h3>Jhon Smith</h3>
                         <p>25, Nov 2025</p>
@@ -169,14 +169,11 @@
                     <div class="rating">Rating: 3.0 <span>★★★☆☆</span></div>
                 </div>
                 <hr class="review-hr">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac risus a risus elementum vehicula.
-                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean
-                    tristique nisi nec fermentum eleifend. Fusce tincidunt, tortor a elementum vehicula, magna ligula
-                    iaculis lacus, vel feugiat velit felis a metus.</p>
+                <p>Batik sangat bagus sekali, kualitas nya oke. Enak dipakai, tetapi berat bahannya.</p>
             </div>
             <div class="review-item">
                 <div class="reviewer-info">
-                    <img src="img/review2.png" alt="Andrio Gelario">
+                    <img src="{{ asset('img/review2.png') }}" alt="Andrio Gelario">
                     <div>
                         <h3>Andrio Gelario</h3>
                         <p>12, Dec 2024</p>
@@ -184,14 +181,11 @@
                     <div class="rating">Rating: 4.0 <span>★★★★☆</span></div>
                 </div>
                 <hr class="review-hr">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac risus a risus elementum vehicula.
-                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean
-                    tristique nisi nec fermentum eleifend. Fusce tincidunt, tortor a elementum vehicula, magna ligula
-                    iaculis lacus, vel feugiat velit felis a metus.</p>
+                <p>Kualitas sih oke ya...tetapi ya gitu berat bahannya</p>
             </div>
             <div class="review-item">
                 <div class="reviewer-info">
-                    <img src="img/review3.png" alt="Juliya Gessy">
+                    <img src="{{ asset('img/review3.png') }}" alt="Juliya Gessy">
                     <div>
                         <h3>Juliya Gessy</h3>
                         <p>23, April 2024</p>
@@ -199,10 +193,7 @@
                     <div class="rating">Rating: 5.0 <span>★★★★★</span></div>
                 </div>
                 <hr class="review-hr">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac risus a risus elementum vehicula.
-                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean
-                    tristique nisi nec fermentum eleifend. Fusce tincidunt, tortor a elementum vehicula, magna ligula
-                    iaculis lacus, vel feugiat velit felis a metus.</p>
+                <p>Bahannya di aku bagus sekali, kuat, ada yang anti air!</p>
             </div>
         </div>
     </section>

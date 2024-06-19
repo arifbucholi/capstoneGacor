@@ -2,7 +2,7 @@
 <footer>
     <div class="container footer-top">
         <div class="footer-column footer-contact">
-            <img src="img/Logo2.png" class="img-fluid" alt="">
+            <img src="{{ asset('img/Logo2.png') }}" class="img-fluid" alt="">
             <p>Lorem ipsum dolor sit amet consectetur. diam pellentesque feugiat accumsan lorem mauris. Vestibulum
                 rhoncus</p>
         </div>
@@ -27,11 +27,11 @@
         <div class="footer-column">
             <h3>Mitra Kami</h3>
             <div class="mitra-logos">
-                <img src="img/mitra1.png" alt="Mitra 1">
-                <img src="img/mitra2.png" alt="Mitra 2">
-                <img src="img/mitra3.png" alt="Mitra 3">
-                <img src="img/mitra4.png" alt="Mitra 4">
-                <img src="img/mitra5.png" alt="Mitra 5">
+                <img src="{{ asset('img/mitra1.png') }}" alt="Mitra 1">
+                <img src="{{ asset('img/mitra2.png') }}" alt="Mitra 2">
+                <img src="{{ asset('img/mitra3.png') }}" alt="Mitra 3">
+                <img src="{{ asset('img/mitra4.png') }}" alt="Mitra 4">
+                <img src="{{ asset('img/mitra5.png') }}" alt="Mitra 5">
             </div>
         </div>
         <div class="footer-column footer-contact footer-last">

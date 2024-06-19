@@ -16,7 +16,9 @@
                 <input type="text" placeholder="Search">
             </form>
             <div class="cart-logo">
-                <i class="bi bi-basket3 fs-3"></i>
+                <a href="/cart" style="color: #985a33;">
+                    <i class="bi bi-basket3 fs-3"></i>
+                </a>
             </div>
             <div class="vertical-line"></div>
             <ul class="nav-links">

@@ -24,8 +24,8 @@
             <p>kintania_cimoet@gmail.com</p>
             <a href="#" class="active">Akun Saya</a>
             <a href="#">Pesanan Saya</a>
-            <a href="#">Pembayaran</a>
-            <a href="#">Ganti Kata Sandi</a>
+            {{-- <a href="#">Pembayaran</a> --}}
+            {{-- <a href="#">Ganti Kata Sandi</a> --}}
         </div>
         <div class="main-content">
             <h2>Informasi Pribadi</h2>

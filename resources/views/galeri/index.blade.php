@@ -26,8 +26,7 @@
         <section class="moto">
             <div class="moto-content">
                 <h1>Galleri Bawean</h1>
-                <p>Lorem ipsum dolor sit amet consectetur. Arcu sed habitasse nibh proin sit interdum curabitur ac.
-                    Morbi cras eget duis</p>
+                <p>Jelajahi keindahan warisan budaya Indonesia di Galleri Bawean, di mana setiap batik menceritakan kisah yang mendalam.</p>
             </div>
         </section>
 
@@ -57,14 +56,11 @@
                 <h2>Toko Batik Kami</h2>
                 <h3>Wonderful Laweyan</h3>
                 <p>
-                    Nulla consequat eget purus a tincidunt. Integer semper lacus sem, quis tincidunt est dictum vel.
-                    Phasellus sit amet ultrices tellus. Pellentesque non est facilisis, posuere nulla vel, sagittis
-                    lacus. Vestibulum.
-                </p>
-                <p>
-                    Duis consectetur, sem vitae imperdiet tincidunt, dolor augue tempus justo, et tempus mi risus eget
-                    diam. Nunc dolor urna, sollicitudin vitae efficitur ac, venenatis quis turpis. Suspendisse potenti.
-                    Pellentesque aliquam.
+                    "Toko Batik Kami: Wonderful Laweyan" adalah destinasi utama untuk menemukan
+                    keindahan dan kekayaan batik. Terletak di Laweyan, kami menawarkan koleksi
+                    batik eksklusif dengan motif tradisional dan modern yang memukau. Kami bangga
+                    dengan kualitas tinggi dan kerajinan tangan yang kami tawarkan, serta komitmen
+                    kami dalam melestarikan warisan budaya batik.
                 </p>
             </div>
             <div class="right-image">
@@ -77,9 +73,7 @@
                 <img src="img/batik-process.jpg" alt="Proses Pembuatan Kain Batik Laweyan">
                 <div class="text-overlay">
                     <h3>Proses Pembuatan Kain Batik Laweyan</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur. Arcu sed habitasse nibh proin sit interdum curabitur ac.
-                        Morbi cras eget duis Lorem ipsum dolor sit amet consectetur. Arcu sed habitasse nibh proin sit
-                        interdum curabitur ac. Morbi cras eget duis</p>
+                    <p>Proses pembuatan kain batik di Laweyan merupakan warisan budaya yang berharga. Dimulai dari pemilihan bahan baku kain hingga proses pewarnaan dan pembatikan secara manual, setiap tahapan dilakukan dengan teliti dan penuh dedikasi oleh para pengrajin lokal. Motif-motif tradisional yang khas dihasilkan melalui teknik canting dan celup, menciptakan karya seni tekstil yang unik dan memikat bagi para penggemar batik di seluruh dunia.</p>
                 </div>
                 <div class="navigation-buttons">
                     <button class="prev">&larr;</button>

@@ -24,8 +24,8 @@
                 <ul>
                     <li><a href="/profile#" class="active"><i id="icon-menu" class="bi bi-person"></i>Akun Saya</a></li>
                     <li><a href="/riwayatpesanan#"><i id="icon-menu" class="bi bi-cart2"></i>Riwayat Pesanan</a></li>
-                    <li><a href="#"><i id="icon-menu" class="bi bi-archive"></i>Pembayaran</a></li>
-                    <li><a href="#"><i id="icon-menu" class="bi bi-lock"></i>Ganti Kata Sandi</a></li>
+                    {{-- <li><a href="#"><i id="icon-menu" class="bi bi-archive"></i>Pembayaran</a></li> --}}
+                    {{-- <li><a href="#"><i id="icon-menu" class="bi bi-lock"></i>Ganti Kata Sandi</a></li> --}}
                 </ul>
             </nav>
         </div>

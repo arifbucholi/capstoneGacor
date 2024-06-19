@@ -62,7 +62,7 @@
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
-                                <a href="auth/redirect">Login Google</a>
+                                <a href="{{ route('auth.google') }}">Login Google</a>
                             </div>
                         </div>
                     </form>

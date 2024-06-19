@@ -10,7 +10,7 @@ class HistoryController extends Controller
 {
     public function index()
     {
-        $orders = Order::where('user_id', Auth::id())->with('items.product')->get();
+        $orders = Order::where('user_id', Auth::id())->with('items.product')->orderBy('created_at', 'desc')->get();
 
         return view('profile.riwayatpesanan', [
             'title' => 'Riwayat Pesanan Saya',

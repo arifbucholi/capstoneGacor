@@ -1,6 +1,6 @@
 <nav id="navbar" class="navbar">
     <div class="container">
-        <a href="/" class="logo"><img src="img/logo2.png" alt="Logo"></a>
+        <a href="/" class="logo"><img src="{{ asset('img/logo2.png') }}" alt="Logo"></a>
         <div class="navbar-left">
             <ul class="nav-links">
                 <li class="@php if($menu == 'beranda') echo 'active'; @endphp"><a href="/">Beranda</a></li>
@@ -16,15 +16,29 @@
                 <input type="text" placeholder="Search">
             </form>
             <div class="cart-logo">
-                <i class="bi bi-basket3 fs-3"></i>
+                <a href="/cart" style="color: #985a33;">
+                    <i class="bi bi-basket3 fs-3"></i>
+                </a>
             </div>
             <div class="vertical-line"></div>
             <ul class="nav-links">
                 @auth
-                    <img src="{{ asset('img/profile.jpg') }}" class="img-fluid rounded-circle" alt="">
+                    <div class="dropdown">
+                        <div class="img-profile-container">
+                            <img src="{{ asset('img/profile.jpg') }}" class="img-profile" alt="">
+                        </div>
+                        <div class="dropdown-content">
+                            <a href="/profile">Profile</a>
+                            <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="id" value="{{ auth()->user()->id }}">
+                                <button type="submit">Logout</button>
+                            </form>
+                        </div>
+                    </div>
                 @else
-                    <li><a href="/login">Login</a></li>
-                    <li><a href="#">Signin</a></li>
+                    <li><a href="{{ route('login') }}">Login</a></li>
+                    <li><a href="{{ route('signup') }}">Signup</a></li>
                 @endauth
             </ul>
         </div>

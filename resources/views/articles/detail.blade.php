@@ -27,45 +27,31 @@
             <span>37 Orang Melihat</span>
         </div>
         <p>
-            Lorem ipsum dolor sit amet consectetur. Arcu vitae aliquet ipsum odio accumsan. Hac euismod massa egestas
-            penatibus ornare molestie placerat neque consectetur. Nec sed ipsum sem pulvinar sagittis ultrices. Orci
-            pharetra porttitor gravida pellentesque dui libero lectus lorem.
+            Nikmati pengalaman wisata yang memukau di Kampung Batik Lawean, Solo. Berlokasi di pusat kota Solo, kampung ini menawarkan pengalaman unik dalam mengeksplorasi seni dan budaya batik Jawa. Paket wisata ini memungkinkan Anda untuk menyaksikan langsung proses pembuatan batik secara tradisional, belajar mengenai makna dan simbol di balik setiap motif batik, serta menikmati keindahan arsitektur tradisional Jawa yang masih terjaga dengan baik.
         </p>
         <img src="img/detail.jpg" alt="Article Image" class="article-image">
-        <p>Lorem ipsum dolor sit amet consectetur. Sed nisl nibh ultricies sagittis sem penatibus laoreet. Orci luctus
-            ultrices et enim turpis enim sem egestas. Augue faucibus scelerisque tristique consectetur sit dui. Pretium
-            mauris enim ac ornare enim. Dui feugiat elementum odio augue enim viverra aliquet. Eget suspendisse dui
-            libero dictum magnis fringilla. In lectus non etiam sit tortor. Tortor etiam proin ornare nibh mollis sit
-            quam elementum. Sagittis arcu commodo consequat et platea. Nisi amet nisl aliquam purus pellentesque
-            tincidunt. Magna eleifend faucibus ipsum adipiscing sed. Eget eget et enim enim nulla mauris eu pharetra.
-            Pretium malesuada ac nisi purus gravida etiam tristique in.
+        <p>Di Kampung Batik Lawean, Anda dapat melihat secara langsung proses pembuatan batik yang memukau. Para pengrajin lokal dengan telaten menghias kain putih dengan malam lilin, menciptakan motif-motif yang indah dan bermakna. Setiap langkah dalam proses ini diwariskan secara turun-temurun, menjadikan setiap karya batik sebagai perpaduan unik antara tradisi dan inovasi. Tak hanya itu, di kampung ini Anda dapat berinteraksi langsung dengan para seniman batik, belajar tentang sejarah dan filosofi di balik setiap corak yang mereka buat.
         </p>
         <p>
-            Nibh at sagittis in viverra donec leo etiam. Mauris diam semper quisque tincidunt et sit velit. Interdum
-            feugiat et non amet. Ac in consectetur eget ultricies integer eget scelerisque morbi. Aliquam faucibus
-            tincidunt nam turpis. Nunc purus turpis ullamcorper integer. Hac interdum vivamus magna massa id volutpat
-            nisi volutpat tortor. Risus pellentesque pharetra adipiscing mauris amet. Laoreet tellus diam purus eget
-            vitae mi. Quam velit sollicitudin sagittis pellentesque malesuada diam neque consectetur in.
+            Selain menjadi pusat produksi batik, Kampung Batik Lawean juga menyajikan arsitektur khas Jawa yang menawan. Bangunan-bangunan bersejarah dengan detail ukiran kayu yang halus dan atap joglo menjadikan suasana kampung ini begitu khas dan memesona. Jalan-jalan kecil yang dilapisi batu bata dan pepohonan rindang menambah nuansa tenang dan sejuk saat menjelajahi kampung ini. Pengalaman mengunjungi Kampung Batik Lawean bukan hanya sekadar melihat, tetapi juga merasakan kehidupan budaya Jawa yang kaya dan berwarna.
         </p>
-
+{{--
         <h2>Lorem ipsum dolor sit amet</h2>
         <p>Lorem ipsum dolor sit amet consectetur. Arcu vitae aliquet ipsum odio accumsan. Hac euismod massa egestas
             penatibus ornare molestie placerat neque consectetur. Nec sed ipsum sem pulvinar sagittis ultrices. Orci
-            pharetra porttitor gravida pellentesque dui libero lectus lorem.</p>
+            pharetra porttitor gravida pellentesque dui libero lectus lorem.</p> --}}
         <div class="quote-box">
             <i class="fas fa-quote-right" id="icon-quote"></i>
-            <p>Lorem ipsum dolor sit amet consectetur. Arcu vitae aliquet ipsum odio accumsan. Hac
-                euismod massa egestas penatibus ornare molestie placerat neque consectetur. Nec sed ipsum sem</p>
-            <span>- Quote Name</span>
+            <p>"Batik adalah bahasa yang merajut sejarah dan identitas, menceritakan kekayaan budaya melalui setiap helai motifnya."</p>
+            <span>- Sentuhan Kainyang</span>
         </div>
-        <h2>Lorem ipsum dolor sit amet</h2>
+        <br>
+        <h2>Pengenalan Batik</h2>
         <div class="gambarlain">
             <img src="img/detail1.jpg" alt="Article Image 2" class="article-image">
             <img src="img/detail2.jpg" alt="Article Image 2" class="article-image">
         </div>
-        <p>Lorem ipsum dolor sit amet consectetur. Arcu vitae aliquet ipsum odio accumsan. Hac euismod massa egestas
-            penatibus ornare molestie placerat neque consectetur. Nec sed ipsum sem pulvinar sagittis ultrices. Orci
-            pharetra porttitor gravida pellentesque dui libero lectus lorem.</p>
+        <p>Pengenalan batik kepada wisatawan adalah langkah penting dalam memperkenalkan kekayaan budaya Indonesia yang khas. Batik Laweyan, khususnya, mempesona dengan pola-pola yang sarat makna dan keindahan desainnya. Di tengah kunjungan mereka, para wisatawan dapat memahami proses pembuatan batik secara langsung, dari proses melukis malam hingga pewarnaan dan pengolahan akhir. Mereka tidak hanya menyaksikan keterampilan para pengrajin lokal yang mahir, tetapi juga merasakan nuansa sejarah yang terpancar dari setiap motif yang tercipta. Hal ini memberi kesempatan bagi wisatawan untuk lebih menghargai keindahan seni tradisional Indonesia dan mengenal lebih dalam tentang nilai-nilai budaya yang diwariskan melalui batik Laweyan.</p>
     </div>
 
     <div class="related-articles">

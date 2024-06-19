@@ -19,30 +19,29 @@
                 <div class="form-group">
                     <h5>Data Pembeli</h5>
                     <div class="input-row">
-                        <input type="text" id="name" placeholder="Nama Lengkap" aria-label="Nama Lengkap" value="{{ $user = Auth::user()->name }}">
+                        <input type="text" id="name" placeholder="Nama Lengkap" aria-label="Nama Lengkap" value="{{ $user = Auth::user()->name }}" required>
                     </div>
                     <div class="input-row">
                         <input type="text" id="phone" name="phone_number" placeholder="Nomor Telepon" class="half-width"
-                            aria-label="Nomor Telepon">
-
+                            aria-label="Nomor Telepon" required>
                     </div>
 
                     <div class="form-group">
                         <h5>Informasi Pengiriman</h5>
                         <div class="input-row">
                             <input type="text" id="province" name="province" placeholder="Pilih Provinsi"
-                                aria-label="Provinsi">
+                                aria-label="Provinsi" required>
                             <input type="text" id="city" name="city" placeholder="Pilih Kabupaten/Kota"
-                                aria-label="Kabupaten/Kota">
+                                aria-label="Kabupaten/Kota" required>
                         </div>
                         <div class="input-row">
                             <input type="text" id="district" name="district" placeholder="Nama Kecamatan"
-                                aria-label="Kecamatan">
+                                aria-label="Kecamatan" required>
                             <input type="text" id="postal-code" name="postal_code" placeholder="Kodepos"
-                                aria-label="Kodepos">
+                                aria-label="Kodepos" required>
                         </div>
                         <textarea id="address" name="full_address" placeholder="Tuliskan alamat lengkap pengiriman" rows="4"
-                            aria-label="Alamat Pengiriman"></textarea>
+                            aria-label="Alamat Pengiriman" required></textarea>
                         {{-- <div class="checkbox-group">
                             <input type="checkbox" id="save-profile" name="save-profile" class="checkbox-custom">
                             <label for="save-profile"></label>

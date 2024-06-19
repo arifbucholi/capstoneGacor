@@ -19,7 +19,7 @@
     @endphp
     <nav id="navbar" class="navbar">
         <div class="container">
-            <a href="/" class="logo"><img src="img/logo.png" alt="Logo"></a>
+            <a href="/" class="logo"><img src="{{ asset('img/logo.png') }}" alt="Logo"></a>
             <div class="navbar-left">
                 <ul class="nav-links">
                     <li><a href="/">Beranda</a></li>
@@ -136,7 +136,7 @@
                     </div>
                 </div> --}}
             </div>
-            <a href="/product" class="btn-more">More</a>
+            {{-- <a href="/product" class="btn-more">More</a> --}}
         </div>
     </section>
 
@@ -150,9 +150,8 @@
                     <div class="testimonial-rating">
                         &#9733;&#9733;&#9733;&#9733;&#9733;
                     </div>
-                    <p class="testimonial-quote">"Lorem ipsum dolor sit amet consectetur. diam pellentesque feugiat
-                        accumsan lorem mauris. Vestibulum rhoncus"</p>
-                    <img src="img/testimonial1.jpg" alt="Intan Kurnia Safitri">
+                    <p class="testimonial-quote">"Batik Laweyan adalah warisan budaya yang menakjubkan. Saya sangat terkesan dengan keindahan motifnya dan kualitas kainnya yang luar biasa."</p>
+                    <img src="{{ asset('img/testimonial1.jpg') }}" alt="Intan Kurnia Safitri">
                     <h4>Intan Kurnia Safitri</h4>
                     <p class="testimonial-role">Mahasiswa</p>
                 </div>
@@ -160,9 +159,8 @@
                     <div class="testimonial-rating">
                         &#9733;&#9733;&#9733;&#9733;&#9733;
                     </div>
-                    <p class="testimonial-quote">"Lorem ipsum dolor sit amet consectetur. diam pellentesque feugiat
-                        accumsan lorem mauris. Vestibulum rhoncus"</p>
-                    <img src="img/testimonial2.jpg" alt="Roby Syahrul Abdullah">
+                    <p class="testimonial-quote">"Mengunjungi Laweyan dan melihat proses pembuatan batik secara langsung benar-benar mengagumkan. Saya sangat terinspirasi dengan dedikasi dan keahlian para pengrajinnya."</p>
+                    <img src="{{ asset('img/testimonial1.jpg') }}" alt="Roby Syahrul Abdullah">
                     <h4>Roby Syahrul Abdullah</h4>
                     <p class="testimonial-role">Direktur PT. Serba Bisa</p>
                 </div>
@@ -170,9 +168,8 @@
                     <div class="testimonial-rating">
                         &#9733;&#9733;&#9733;&#9733;&#9733;
                     </div>
-                    <p class="testimonial-quote">"Lorem ipsum dolor sit amet consectetur. diam pellentesque feugiat
-                        accumsan lorem mauris. Vestibulum rhoncus"</p>
-                    <img src="img/testimonial3.jpg" alt="Ana Siti Permatasari">
+                    <p class="testimonial-quote">"Batik Laweyan tidak hanya tentang kain yang indah, tetapi juga tentang sejarah dan cerita di balik setiap pola. Ini adalah pengalaman yang tidak boleh dilewatkan bagi para pecinta budaya."</p>
+                    <img src="{{ asset('img/testimonial1.jpg') }}" alt="Ana Siti Permatasari">
                     <h4>Ana Siti Permatasari</h4>
                     <p class="testimonial-role">Pengusaha Ayam</p>
                 </div>
@@ -191,22 +188,22 @@
             <h2>MEDIA PARTNER</h2>
             <h3>Dipublikasikan oleh Media Internasional dan Nasional</h3>
             <div class="media-logos">
-                <img src="img/cnn.png" alt="CNN">
-                <img src="img/bbc.png" alt="BBC">
-                <img src="img/afc.png" alt="AFC">
-                <img src="img/discovery.png" alt="Discovery">
-                <img src="img/aljazeera.png" alt="Al Jazeera">
-                <img src="img/trans-tv-k 1.png" alt="Trans TV">
-                <img src="img/trans7.png" alt="Trans 7">
-                <img src="img/sctv.png" alt="SCTV">
-                <img src="img/rcti.png" alt="RCTI">
-                <img src="img/net.png" alt="NET">
-                <img src="img/metrotv.png" alt="Metro TV">
-                <img src="img/tvri.png" alt="TVRI">
-                <img src="img/tvone.png" alt="TV One">
-                <img src="img/kompas.png" alt="Kompas">
-                <img src="img/indosiar.png" alt="Indosiar">
-                <img src="img/antv.png" alt="ANTV">
+                <img src="{{ asset('img/cnn.png') }}" alt="CNN">
+                <img src="{{ asset('img/bbc.png') }}" alt="BBC">
+                <img src="{{ asset('img/afc.png') }}" alt="AFC">
+                <img src="{{ asset('img/discovery.png') }}" alt="Discovery">
+                <img src="{{ asset('img/aljazeera.png') }}" alt="Al Jazeera">
+                <img src="{{ asset('img/trans-tv-k 1.png') }}" alt="Trans TV">
+                <img src="{{ asset('img/trans7.png') }}" alt="Trans 7">
+                <img src="{{ asset('img/sctv.png') }}" alt="SCTV">
+                <img src="{{ asset('img/rcti.png') }}" alt="RCTI">
+                <img src="{{ asset('img/net.png') }}" alt="NET">
+                <img src="{{ asset('img/metrotv.png') }}" alt="Metro TV">
+                <img src="{{ asset('img/tvri.png') }}" alt="TVRI">
+                <img src="{{ asset('img/tvone.png') }}" alt="TV One">
+                <img src="{{ asset('img/kompas.png') }}" alt="Kompas">
+                <img src="{{ asset('img/indosiar.png') }}" alt="Indosiar">
+                <img src="{{ asset('img/antv.png') }}" alt="ANTV">
             </div>
         </div>
     </section>

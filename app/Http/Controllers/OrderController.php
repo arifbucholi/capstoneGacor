@@ -77,7 +77,7 @@ class OrderController extends Controller
         Cart::where('user_id', $user->id)->delete();
 
         // Redirect ke halaman konfirmasi order dengan pesan sukses
-        return redirect()->route('pembayaran')->with('success', 'Order placed successfully. Please complete your payment.');
+        return redirect()->route('riwayatpesanan')->with('success', 'Order placed successfully. Please complete your payment.');
     }
 
     public function removeFromCart($id)
