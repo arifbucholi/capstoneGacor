@@ -20,7 +20,7 @@
     <section class="product-page">
         <div class="product-images">
             <div class="bg-main-img">
-                <img src="{{ asset('img/detailproduk.png') }}" alt="Main Product Image" class="main-image">
+                <img src="{{ asset('img/'.$product->image) }}" alt="Main Product Image" class="main-image">
             </div>
         </div>
         <div class="product-details">

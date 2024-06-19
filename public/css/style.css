@@ -111,6 +111,74 @@
     color: #fff; /* Warna teks placeholder */
 }
 
+.navbar .dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.navbar .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; /* Posisi di bawah navbar */
+    right: 0;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 4px;
+}
+
+.navbar .dropdown-content a {
+    color: #637381;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar .dropdown-content a:hover {
+    background-color: #985a33;
+    color: white;
+}
+
+.navbar .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.navbar .dropdown-content form {
+    margin: 0; /* Menghilangkan margin default dari form */
+}
+
+.navbar .dropdown-content button {
+    width: 100%; /* Membuat tombol selebar kontainer */
+    background: none; /* Menghapus background default tombol */
+    border: none; /* Menghapus border default tombol */
+    color: #637381; /* Warna teks */
+    padding: 12px 16px; /* Padding sama seperti link lainnya */
+    text-align: left; /* Menyelaraskan teks ke kiri */
+    cursor: pointer; /* Pointer saat hover */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar .dropdown-content button:hover {
+    background-color: #985a33; /* Warna latar belakang saat hover */
+    color: white; /* Warna teks saat hover */
+}
+
+.navbar .img-profile-container {
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.navbar .img-profile {
+    width: 40px; /* Disesuaikan dengan ukuran gambar profil yang diinginkan */
+    height: 40px; /* Disesuaikan dengan ukuran gambar profil yang diinginkan */
+    object-fit: cover; /* Menjaga rasio aspek gambar */
+}
+
 /* Hero Section */
 .hero-section {
     position: relative;

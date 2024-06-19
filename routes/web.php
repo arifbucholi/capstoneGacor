@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
@@ -84,10 +86,14 @@ Route::get('/laravel', function () {
     return view('welcome');
 });
 
-Route::get('/auth/redirect', [SocialiteController::class, 'redirect']);
-
-Route::get('/auth/google/callback', [SocialiteController::class, 'callback']);
+Route::get('/signin', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/signin', [LoginController::class, 'authenticate'])->name('loginPost')->middleware('guest');
+Route::get('/signup', [RegisterController::class, 'index'])->name('signup')->middleware('guest');
+Route::post('/signup', [RegisterController::class, 'store'])->name('signupPost')->middleware('guest');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
+Route::get('/auth/google', [SocialiteController::class, 'redirect'])->name('authGoogle')->middleware('guest');
+Route::get('/auth/google/callback', [SocialiteController::class, 'callback'])->middleware('guest');
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+// Route::get('/home', [HomeController::class, 'index'])->name('home');
