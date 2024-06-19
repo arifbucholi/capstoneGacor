@@ -40,10 +40,22 @@
                 <div class="vertical-line"></div>
                 <ul class="nav-links">
                     @auth
-                        <img src="{{ asset('img/profile.jpg') }}" class="img-fluid rounded-circle" alt="">
+                        <div class="dropdown">
+                            <div class="img-profile-container">
+                                <img src="{{ asset('img/profile.jpg') }}" class="img-profile" alt="">
+                            </div>
+                            <div class="dropdown-content">
+                                <a href="/profile">Profile</a>
+                                <form action="{{ route('logout') }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="id" value="{{ auth()->user()->id }}">
+                                    <button type="submit">Logout</button>
+                                </form>
+                            </div>
+                        </div>
                     @else
-                        <li><a href="/login">Login</a></li>
-                        <li><a href="#">Signin</a></li>
+                        <li><a href="{{ route('login') }}">Login</a></li>
+                        <li><a href="{{ route('signup') }}">Signup</a></li>
                     @endauth
                 </ul>
             </div>
@@ -74,17 +86,18 @@
             <h2>Lineup Garment Product</h2>
             <div class="products-grid">
                 @foreach ($products as $product)
-                <div class="product-card">
-                    <a href="{{ route('product.detail', ['id' => $product->id]) }}" style="text-decoration: none; color: inherit;">
-                        <img src="{{ asset('img/' . $product->image) }}" alt="{{ $product->name }}">
-                        <div class="product-info">
-                            <h3>{{ $product->name }}</h3>
-                            <p>Rating: {{ $product->rating }}</p>
-                            <p>Terjual: {{ $product->sold }}</p>
-                            <p>Rp.{{ number_format($product->price, 0, ',', '.') }}</p>
-                        </div>
-                    </a>
-                </div>
+                    <div class="product-card">
+                        <a href="{{ route('product.detail', ['id' => $product->id]) }}"
+                            style="text-decoration: none; color: inherit;">
+                            <img src="{{ asset('img/' . $product->image) }}" alt="{{ $product->name }}">
+                            <div class="product-info">
+                                <h3>{{ $product->name }}</h3>
+                                <p>Rating: {{ $product->rating }}</p>
+                                <p>Terjual: {{ $product->sold }}</p>
+                                <p>Rp.{{ number_format($product->price, 0, ',', '.') }}</p>
+                            </div>
+                        </a>
+                    </div>
                 @endforeach
                 {{-- <div class="product-card">
                     <img src="{{ asset('img/baju1.jpg') }}" alt="Product 1">
@@ -306,4 +319,5 @@
         });
     </script>
 </body>
+
 </html>

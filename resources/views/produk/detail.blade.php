@@ -170,7 +170,7 @@
         <div class="review-details">
             <div class="review-item">
                 <div class="reviewer-info">
-                    <img src="img/review1.png" alt="Jhon Smith">
+                    <img src="{{ asset('img/review1.png') }}" alt="Jhon Smith">
                     <div>
                         <h3>Jhon Smith</h3>
                         <p>25, Nov 2025</p>
@@ -185,7 +185,7 @@
             </div>
             <div class="review-item">
                 <div class="reviewer-info">
-                    <img src="img/review2.png" alt="Andrio Gelario">
+                    <img src="{{ asset('img/review2.png') }}" alt="Andrio Gelario">
                     <div>
                         <h3>Andrio Gelario</h3>
                         <p>12, Dec 2024</p>
@@ -200,7 +200,7 @@
             </div>
             <div class="review-item">
                 <div class="reviewer-info">
-                    <img src="img/review3.png" alt="Juliya Gessy">
+                    <img src="{{ asset('img/review3.png') }}" alt="Juliya Gessy">
                     <div>
                         <h3>Juliya Gessy</h3>
                         <p>23, April 2024</p>

@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: url('../../img/bg-auth.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* efek gelap */
+    z-index: 1;
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+}
+
+.logo img {
+    width: 100px;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    position: relative;
+    z-index: 2;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.nav li {
+    list-style: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.nav .active {
+    border-bottom: 2px solid #000;
+}
+
+.nav a {
+    text-decoration: none;
+    color: black;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="email"],
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.forgot-password {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    text-align: left;
+    text-decoration: none;
+    color: #000;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #8B4513;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #A0522D;
+}
+
+.atau {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.google-login {
+    width: 100%;
+    padding: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.google-login img {
+    width: 20px;
+    margin-right: 10px;
+}
