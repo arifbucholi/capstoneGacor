@@ -26,7 +26,14 @@ class OrderController extends Controller
         // Menghitung total pembayaran setelah biaya pengiriman dan diskon
         $totalPayment = $subtotal + $shippingCost - $discount;
 
-        return view('checkoutPage', compact('userCart', 'subtotal', 'shippingCost', 'discount', 'totalPayment'));
+        return view('checkoutPage', [
+            'title' => 'Pembayaran',
+            'userCart' => $userCart,
+            'subtotal' => $subtotal,
+            'shippingCost' => $shippingCost,
+            'discount' => $discount,
+            'totalPayment' => $totalPayment
+        ]);
     }
 
     public function placeOrder(Request $request)
@@ -63,14 +70,14 @@ class OrderController extends Controller
         $order->payment_method = $validatedData['payment_method'];
         $order->total_price = $totalPrice;
         $order->status = 'menunggu pembayaran';
-        dd($order);
+        // dd($order);
         $order->save();
 
         // Menghapus semua item dalam keranjang belanja pengguna setelah berhasil checkout
-        $user->cart->delete();
+        Cart::where('user_id', $user->id)->delete();
 
         // Redirect ke halaman konfirmasi order dengan pesan sukses
-        return redirect()->route('orderConfirmation')->with('success', 'Order placed successfully. Please complete your payment.');
+        return redirect()->route('pembayaran')->with('success', 'Order placed successfully. Please complete your payment.');
     }
 
     public function removeFromCart($id)
